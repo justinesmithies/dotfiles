@@ -9,7 +9,7 @@ Qtile is a very nice, hackable tiling window manager written and configured in P
 | ------------------------- | ------------------------- |
 | CTRL + MOD + r            | restart Qtile             |
 | CTRL + MOD + q            | shutdown Qtile            |
-| MOD + q                   | kill window               |
+| MOD + w                   | kill window               |
 | MOD + r                   | spawn program             |
 | MOD + RETURN              | spawn terminal            |
 | CTRL + SPACE              | Rofi menu                 |
