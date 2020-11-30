@@ -1,0 +1,79 @@
+configuration {
+	display-drun:   "Apps";
+	display-window: "Window";
+	show-icons:     true;
+	sidebar-mode:   true;
+}
+
+* {
+	background-color: #002c3e50;
+	text-color:       #EFEFEF;
+    font: "Hack Nerd Font Mono 12";
+ 
+	line-margin:     0;
+	line-padding:    0;
+	separator-style: "none";
+	hide-scrollbar:  "true";
+	margin:          0;
+	padding:         0;
+}
+
+window {
+	border: 0;
+    border-radius: 4px;
+	orientation: horizontal;
+	children:	 [mainbox];
+}
+
+mainbox {
+	children: [entry,listview,mode-switcher];
+    spacing: 0px;
+    padding: 0px 0;
+    border: 1px;
+    border-color: @base0D;
+}
+
+button {
+	padding: 8px 2px;
+}
+
+button selected {
+	background-color: #3fa9f4;
+	text-color:       #EFEFEF;
+}
+
+inputbar {
+	padding: 5px;
+	spacing: 5px;	
+}
+
+listview {
+    fixed-height: 0;
+    border: 0px;
+    spacing: 5px;
+    scrollbar: false;
+    padding: 10px 10px 0px;
+}
+
+element {
+	background-color: #00000000;
+    border: 0;
+    border-radius: 0px;
+    padding: 3 0 3 4 ;
+}
+
+entry {
+	expand:         false;
+	text-color:     #EFEFEF;
+	vertical-align: 1;
+	padding:        8px;
+}
+
+element selected {
+	background-color: #3fa9f4;
+	text-color:       #EFEFEF;
+}
+
+mode-switcher {
+	padding:        8 0 0 0;
+}
