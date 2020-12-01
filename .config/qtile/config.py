@@ -84,8 +84,8 @@ keys = [
     Key([mod], "j", lazy.layout.up(),
         desc="Move focus up in stack pane"),
         
-    Key([mod], "h", lazy.layout.left()),
-	Key([mod], "l", lazy.layout.right()),
+    #Key([mod], "h", lazy.layout.left()),
+	#Key([mod], "l", lazy.layout.right()),
 	Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
 	Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 	Key([mod, "mod1"], "j", lazy.layout.flip_down()),
@@ -96,7 +96,21 @@ keys = [
 	Key([mod, "control"], "k", lazy.layout.grow_up()),
 	Key([mod, "control"], "h", lazy.layout.grow_left()),
 	Key([mod, "control"], "l", lazy.layout.grow_right()),
-	Key([mod, "shift"], "n", lazy.layout.normalize()),	
+	Key([mod], "n", lazy.layout.normalize()),
+    Key([mod], "m",
+             lazy.layout.maximize(),
+             desc='toggle window between minimum and maximum sizes'
+             ), 
+	Key([mod], "h",
+             lazy.layout.grow(),
+             lazy.layout.increase_nmaster(),
+             desc='Expand window (MonadTall), increase number in master pane (Tile)'
+             ),
+         Key([mod], "l",
+             lazy.layout.shrink(),
+             lazy.layout.decrease_nmaster(),
+             desc='Shrink window (MonadTall), decrease number in master pane (Tile)'
+             ),
 
     # Move windows up or down in current stack
     Key([mod, "control"], "k", lazy.layout.shuffle_down(),
