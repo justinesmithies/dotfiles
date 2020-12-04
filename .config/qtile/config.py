@@ -150,7 +150,7 @@ keys = [
         
     # ------------ Hardware Configs ------------
     # Volume
-    Key([], "XF86AudioMute", lazy.spawn(home + "/bin/volumecontrol mute")),
+    Key([], "XF86AudioMute", lazy.spawn(home + "/.local/bin/volumecontrol mute")),
     Key([], "XF86AudioLowerVolume", lazy.spawn(home + "/.local/bin/volumecontrol down")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn(home + "/.local/bin/volumecontrol up")),
     
