@@ -151,12 +151,12 @@ keys = [
     # ------------ Hardware Configs ------------
     # Volume
     Key([], "XF86AudioMute", lazy.spawn(home + "/bin/volumecontrol mute")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn(home + "/bin/volumecontrol down")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn(home + "/bin/volumecontrol up")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn(home + "/.local/bin/volumecontrol down")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn(home + "/.local/bin/volumecontrol up")),
     
     # Brightness
-    Key([], "F2", lazy.spawn(home + "/bin/brightnesscontrol down")),
-    Key([], "F3", lazy.spawn(home + "/bin/brightnesscontrol up")),
+    Key([], "F2", lazy.spawn(home + "/.local/bin/brightnesscontrol down")),
+    Key([], "F3", lazy.spawn(home + "/.local/bin/brightnesscontrol up")),
     
     # Screenshot
     # Save screen to clipboard
