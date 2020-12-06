@@ -225,8 +225,8 @@ screens = [
                 widget.CurrentLayout(**widget_defaults),
                 widget.GroupBox(**widget_defaults),
                 widget.Prompt(**widget_defaults),
-                widget.TaskList(margin = 2, highlight_method = 'block', **widget_defaults),
-                widget.Spacer(length = 10),
+                #widget.TaskList(margin = 2, highlight_method = 'block', **widget_defaults),
+                widget.Spacer(),
                 widget.CheckUpdates(
                        **widget_defaults,
                        update_interval = 1800,
