@@ -35,6 +35,12 @@ from datetime import datetime as dt
 import os
 import subprocess
 
+# Work around for matching Spotify
+import time
+
+@hook.subscribe.client_new
+def slight_delay(window):
+	time.sleep(0.02)
 
 @hook.subscribe.startup_once
 def autostart():
@@ -139,7 +145,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
     # Qtile system keys
-    Key([mod, "control"], "l", lazy.spawn("dm-tool lock")),
+    Key([mod, "control"], "l", lazy.spawn("betterlockscreen -l")),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
@@ -154,6 +160,11 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn(home + "/.local/bin/volumecontrol down")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn(home + "/.local/bin/volumecontrol up")),
     
+    # Media keys
+    Key([], "XF86AudioPlay", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.PlayPause")),
+    Key([], "XF86AudioNext", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Next")),
+    Key([], "XF86AudioPrev", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Previous")),
+    
     # Brightness
     Key([], "F2", lazy.spawn(home + "/.local/bin/brightnesscontrol down")),
     Key([], "F3", lazy.spawn(home + "/.local/bin/brightnesscontrol up")),
@@ -166,25 +177,24 @@ keys = [
 	# Capture region of screen to clipboard
 	Key([mod, "shift"], "s", lazy.spawn("/usr/bin/escrotum -Cs")),
 ]
+    
+# Groups with matches
 
-# Groups
+workspaces = [
+    {"name": " Home", "key": "1", "matches": [Match(wm_class='firefox')]},
+    {"name": " Dev", "key": "2", "matches": [Match(wm_class='geany')]},
+    {"name": " Chat", "key": "3", "matches": [Match(wm_class='telegram-desktop')]},
+    {"name": " GFX", "key": "4", "matches": [Match(wm_class='gimp')]},
+    {"name": "阮 Music", "key": "5", "matches": [Match(wm_class='spotify')]},
+]
 
-groups = [Group(i) for i in "1234"]
+groups = []
+for workspace in workspaces:
+    matches = workspace["matches"] if "matches" in workspace else None
+    groups.append(Group(workspace["name"], matches=matches, layout="monadtall"))
+    keys.append(Key([mod], workspace["key"], lazy.group[workspace["name"]].toscreen()))
+    keys.append(Key([mod, "shift"], workspace["key"], lazy.window.togroup(workspace["name"])))
 
-for i in groups:
-    keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(),
-            desc="Switch to group {}".format(i.name)),
-
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
-    ])
     
 ##### DEFAULT THEME SETTINGS FOR LAYOUTS #####
 layout_theme = {"border_width": 3,
@@ -223,9 +233,8 @@ screens = [
                 widget.Spacer(length = 10),
                 widget.CurrentLayoutIcon(scale = 0.7),
                 widget.CurrentLayout(**widget_defaults),
-                widget.GroupBox(**widget_defaults),
+                widget.GroupBox(borderwidth=2, inactive='969696', this_current_screen_border='eee8d5', this_screen_border='eee8d5', **widget_defaults),
                 widget.Prompt(**widget_defaults),
-                #widget.TaskList(margin = 2, highlight_method = 'block', **widget_defaults),
                 widget.Spacer(),
                 widget.CheckUpdates(
                        **widget_defaults,
@@ -236,6 +245,14 @@ screens = [
                        colour_have_updates=GREEN,
                        execute = 'kitty -e yay -Syu',
                        ),
+                widget.Mpris2(
+                    name='spotify',
+                    objname="org.mpris.MediaPlayer2.spotify",
+                    display_metadata=['xesam:title', 'xesam:artist'],
+                    scroll_chars=None,
+                    stop_pause_text='',
+                    **widget_defaults
+                ),       
                 widget.BatteryIcon(
                        ),
                 widget.Battery(charge_char='+', discharge_char='', unknown_char='', format='{char}{percent:2.0%}', **widget_defaults),
