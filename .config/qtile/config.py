@@ -207,8 +207,7 @@ for workspace in workspaces:
     groups.append(Group(workspace["name"], matches=matches, layout="monadtall"))
     keys.append(Key([mod], workspace["key"], lazy.group[workspace["name"]].toscreen()))
     keys.append(Key([mod, "shift"], workspace["key"], lazy.window.togroup(workspace["name"])))
-
-    
+   
 ##### DEFAULT THEME SETTINGS FOR LAYOUTS #####
 layout_theme = {"border_width": 3,
                 "margin": 16,
