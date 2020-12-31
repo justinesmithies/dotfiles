@@ -35,6 +35,19 @@ from datetime import datetime as dt
 import os
 import subprocess
 
+# When application launched automatically focus it's group
+@hook.subscribe.client_new
+def modify_window(client):
+    #if (client.window.get_wm_transient_for() or client.window.get_wm_type() in floating_types):
+    #    client.floating = True
+
+    for group in groups:  # follow on auto-move
+        match = next((m for m in group.matches if m.compare(client)), None)
+        if match:
+            targetgroup = client.qtile.groups_map[group.name]  # there can be multiple instances of a group
+            targetgroup.cmd_toscreen(toggle=False)
+            break
+
 # Work around for matching Spotify
 import time
 
@@ -326,15 +339,3 @@ focus_on_window_activation = "smart"
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "Qtile"
-
-# assignments = {}
-# assignments["1"] = ["Navigator", "geany"]
-# assignments["2"] = ["", ""]
-# assignments["3"] = ["", ""]
-# assignments["4"] = ["telegram-desktop", ""]
-# @hook.subscribe.client_new
-# def assign_app_group(client):
-    # wm_class = client.window.get_wm_class()[0]
-    # for i in list(assignments.keys()):
-        # if wm_class in assignments[i]:
-            # client.togroup(i, switch_group=True)
