@@ -60,3 +60,4 @@ cmap w!! w !sudo /usr/bin/tee >/dev/null "%"
 " Map various key bindings
 :nnoremap <F7> :NERDTreeToggle<CR>
 :nnoremap <F8> :TagbarToggle<CR>
+
