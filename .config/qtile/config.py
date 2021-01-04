@@ -195,7 +195,7 @@ keys = [
 
 workspaces = [
     {"name": " Home", "key": "1", "matches": [Match(wm_class='firefox')]},
-    {"name": " Dev", "key": "2", "matches": [Match(wm_class='geany'),Match(wm_class='vim'),Match(title='vim')]},
+    {"name": " Dev", "key": "2", "matches": [Match(wm_class='geany'),Match(wm_class='vim')]},
     {"name": " Chat", "key": "3", "matches": [Match(wm_class='telegram-desktop')]},
     {"name": " GFX", "key": "4", "matches": [Match(wm_class='gimp')]},
     {"name": "阮 Music", "key": "5", "matches": [Match(wm_class='spotify')]},
