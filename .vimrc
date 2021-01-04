@@ -11,6 +11,16 @@ Plug 'preservim/tagbar'
 " NERDTree Plugin
 Plug 'preservim/nerdtree'
 
+" vim-devicons Plugin
+Plug 'ryanoasis/vim-devicons'
+
+" vim-airline Plugin
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
+
 " Initialize plugin system
 call plug#end()
 
