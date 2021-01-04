@@ -25,7 +25,7 @@
 # SOFTWARE.
 
 from typing import List  # noqa: F401
-
+from libqtile import qtile
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -47,6 +47,18 @@ def modify_window(client):
             targetgroup = client.qtile.groups_map[group.name]  # there can be multiple instances of a group
             targetgroup.cmd_toscreen(toggle=False)
             break
+
+# Hook to fallback to the first group with windows when last window of group is killed
+@hook.subscribe.client_killed
+def fallback(window):
+    if window.group.windows != {window}:
+        return
+
+    for group in qtile.groups:
+        if group.windows:
+            qtile.current_screen.toggle_group(group)
+            return
+    qtile.current_screen.toggle_group(qtile.groups[0])
 
 # Work around for matching Spotify
 import time
