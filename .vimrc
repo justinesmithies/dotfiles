@@ -1,3 +1,19 @@
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Tagbar Plugin
+Plug 'preservim/tagbar'
+
+" NERDTree Plugin
+Plug 'preservim/nerdtree'
+
+" Initialize plugin system
+call plug#end()
+
 " General settings
 
 set encoding=utf-8
@@ -40,3 +56,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 cnoremap W!! execute 'silent! write !sudo /usr/bin/tee "%" >/dev/null' <bar> edit!
 " Talkative version of the super user edit, sudo tee trick.
 cmap w!! w !sudo /usr/bin/tee >/dev/null "%"
+
+" Map various key bindings
+:nnoremap <F7> :NERDTreeToggle<CR>
+:nnoremap <F8> :TagbarToggle<CR>
