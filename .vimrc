@@ -44,6 +44,7 @@ let NERDTreeShowHidden=1                            " Show hidden files on NERDT
 
 " Toggle NerdTree
 :nnoremap <F7> :NERDTreeToggle<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" TagBar
 " Toggle TagBar
 :nnoremap <F8> :TagbarToggle<CR>
