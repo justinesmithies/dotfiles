@@ -5,6 +5,9 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+" vim-startify Plugin
+Plug 'mhinz/vim-startify'
+
 " Tagbar Plugin
 Plug 'preservim/tagbar'
 
@@ -45,21 +48,32 @@ let NERDTreeShowHidden=1                            " Show hidden files on NERDT
 " Toggle NerdTree
 :nnoremap <F7> :NERDTreeToggle<CR>
 
+" Exit Vim if NERDTree is the only split
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Open nerdtree when no file is opened
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" TagBar
 " Toggle TagBar
 :nnoremap <F8> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Startify
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Auto commands
 " Makes the background transparent. Leave these out if you're not using a transparent
 " terminal.
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
-" Open nerdtree when no file is opened
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Exit Vim if NERDTree is the only split
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Get both NERDTree and Startify working at startup
+autocmd VimEnter *
+                \   if !argc()
+                \ |   Startify
+                \ |   NERDTree
+                \ |   wincmd w
+                \ | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Mappings
 " Silent version of the super user edit, sudo tee trick.
