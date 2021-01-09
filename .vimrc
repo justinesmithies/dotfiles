@@ -1,6 +1,6 @@
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Plugins
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
@@ -17,57 +17,53 @@ Plug 'ryanoasis/vim-devicons'
 " vim-airline Plugin
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts = 1
 
-" Initialize plugin system
 call plug#end()
 
-" General settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Settings
+" Basic
+set encoding=utf-8                                  " Set encoding to utf-8
+set number                                          " Show line numbers on the sidebar
 
-set encoding=utf-8
+" Colours
+set termguicolors                                   " Enable 24-bit colors on terminal
+syntax enable                                       " Enable syntax highlighting
+set background=dark                                 " Use colors that suit a dark background
+colorscheme gruvbox                                 " Change colorscheme
 
-" Enables absolute line numbers
-set number
+" Search
+set hlsearch                                        " Enables search result highlighting
 
-" Enables search result highlighting
-set hlsearch
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Airline
+let g:airline#extensions#tabline#enabled = 1        " Enable the list of buffers
+let g:airline_theme='powerlineish'                  " Match airline theme with vim colorscheme
+let g:airline_powerline_fonts = 1                   " Use powerline fonts for airline
 
-" Disables automatic comment insertion (i.e. automatically appending something like '#' to the beginning of a new line when the current line is a comment)
-"set formatoptions-=cro
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" NERDTree
+let NERDTreeShowHidden=1                            " Show hidden files on NERDTree
 
-" Sets searches to be case-insensitive if a search is all lowercase and case-sensitive if a search has any capital letters
-"set ignorecase smartcase
+" Toggle NerdTree
+:nnoremap <F7> :NERDTreeToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" TagBar
+" Toggle TagBar
+:nnoremap <F8> :TagbarToggle<CR>
 
-" Set color scheme
-set t_Co=256
-syntax on
-set background=dark
-colorscheme gruvbox
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Auto commands
 " Makes the background transparent. Leave these out if you're not using a transparent
 " terminal.
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
-" This is what sets vim to use 24-bit colors. It will also work for any version of neovim
-" newer than 0.1.4.
-set termguicolors
-
 " Open nerdtree when no file is opened
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let NERDTreeShowHidden=1
 
 " Exit Vim if NERDTree is the only split
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Mappings
 " Silent version of the super user edit, sudo tee trick.
 cnoremap W!! execute 'silent! write !sudo /usr/bin/tee "%" >/dev/null' <bar> edit!
 " Talkative version of the super user edit, sudo tee trick.
 cmap w!! w !sudo /usr/bin/tee >/dev/null "%"
 
-" Map various key bindings
-:nnoremap <F7> :NERDTreeToggle<CR>
-:nnoremap <F8> :TagbarToggle<CR>
 
