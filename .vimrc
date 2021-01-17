@@ -21,6 +21,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" IndentLine Plugin
+Plug 'Yggdroot/indentLine'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Settings
@@ -51,10 +54,6 @@ let NERDTreeShowHidden=1                            " Show hidden files on NERDT
 " Exit Vim if NERDTree is the only split
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Open nerdtree when no file is opened
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Startify | NERDTree | wincmd w | endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" TagBar
 " Toggle TagBar
 :nnoremap <F8> :TagbarToggle<CR>
@@ -63,13 +62,22 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " autocmd BufEnter * if line2byte('.') == -1 && len(tabpagebuflist()) == 2 | Startify | endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" IndentLines
+" Disable IndentLines by default
+let g:indentLine_enabled = 0
+
+" Toggle IndentLines
+:noremap <F5> :IndentLinesToggle<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Auto commands
 " Makes the background transparent. Leave these out if you're not using a transparent
 " terminal.
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
-" Get both NERDTree and Startify working at startup
-autocmd VimEnter * if !argc() | Startify | NERDTree | wincmd w | elseif
+" Get both NERDTree and Startify working at startup if no args passed
+
+autocmd StdinReadPre * let g:isReadingFromStdin = 1
+autocmd VimEnter * if !argc() && !exists('g:isReadingFromStdin') | Startify | NERDTree | wincmd w | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Mappings
 " Silent version of the super user edit, sudo tee trick.

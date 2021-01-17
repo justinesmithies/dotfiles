@@ -9,14 +9,18 @@ source <(kitty + complete setup bash)
 
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias vim='(kitty --class vim -e vim & ) > /dev/null 2>&1'
-
-export EDITOR=nano
+alias vim='vimargs'
+alias ssh="kitty +kitten ssh"
 
 #PS1='[\u@\h \W]\$ '
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
-
+export EDITOR=vim
 export PATH=$PATH:~/.local/bin
+
+vimargs() {
+    #do things with parameters like $1 such as
+    (kitty --class vim -e vim $1 & ) > /dev/null 2>&1
+}
 
 # startx if on matching VT
 
