@@ -24,12 +24,6 @@ vimargs() {
     (kitty --class vim -e vim $@ & ) > /dev/null 2>&1
 }
 
-ranger-fix() {
-    COLUMNS=
-    LINES=
-    (kitty --class ranger -e ranger $@ & ) > /dev/null 2>&1
-}
-
 # startx if on matching VT
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
