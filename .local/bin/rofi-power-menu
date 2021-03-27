@@ -15,7 +15,7 @@ set -u
 # All supported choices
 all=(shutdown reboot suspend hibernate logout lockscreen)
 
-# By default, show all (i.e., just copy the array)
+# By default, show a ll (i.e., just copy the array)
 show=("${all[@]}")
 
 declare -A texts
@@ -38,7 +38,8 @@ icons[shutdown]="\uf011"
 icons[cancel]="\u00d7"
 
 declare -A actions
-actions[lockscreen]="loginctl lock-session $XDG_SESSION_ID"
+#actions[lockscreen]="loginctl lock-session $XDG_SESSION_ID"
+actions[lockscreen]="betterlockscreen -l"
 #actions[switchuser]="???"
 actions[logout]="loginctl terminate-session $XDG_SESSION_ID"
 actions[suspend]="systemctl suspend"
