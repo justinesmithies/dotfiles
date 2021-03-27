@@ -80,7 +80,7 @@ def custom_strftime(format, t):
     return t.strftime(format).replace('{S}', str(t.day) + suffix(t.day))
 
 def custom_date():
-	return custom_strftime('%A, {S} %B', dt.now())
+	return custom_strftime('%A {S} %B', dt.now())
 
 mod = "mod4"
 
@@ -206,11 +206,13 @@ keys = [
 # Groups with matches
 
 workspaces = [
-    {"name": " Home", "key": "1", "matches": [Match(wm_class='firefox')]},
-    {"name": " Dev", "key": "2", "matches": [Match(wm_class='geany'),Match(wm_class='vim')]},
-    {"name": " Chat", "key": "3", "matches": [Match(wm_class='telegram-desktop')]},
-    {"name": " GFX", "key": "4", "matches": [Match(wm_class='gimp')]},
-    {"name": "阮 Music", "key": "5", "matches": [Match(wm_class='spotify')]},
+    {"name": " ₁", "key": "1", "matches": [Match(wm_class='firefox')]},
+    {"name": " ₂", "key": "2", "matches": [Match(wm_class='kitty'),Match(wm_class='ranger')]},
+    {"name": " ₃", "key": "3", "matches": [Match(wm_class='geany'),Match(wm_class='vim')]},
+    {"name": " ₄", "key": "4", "matches": [Match(wm_class='telegram-desktop')]},
+    {"name": " ₅", "key": "5", "matches": [Match(wm_class='gimp-2.10')]},
+    {"name": "阮 ₆", "key": "6", "matches": [Match(wm_class='spotify')]},
+    {"name": " ₇", "key": "7", "matches": [Match(wm_class='libreoffice')]},
 ]
 
 groups = []
@@ -244,9 +246,9 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Hack Nerd Font Mono',
-    fontsize=14,
-    padding=3,
+    font='FiraCode Nerd Font',
+    fontsize=16,
+    padding=2,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -257,7 +259,7 @@ screens = [
                 widget.Spacer(length = 10),
                 widget.CurrentLayoutIcon(scale = 0.7),
                 widget.CurrentLayout(**widget_defaults),
-                widget.GroupBox(borderwidth=2, inactive='969696', this_current_screen_border='eee8d5', this_screen_border='eee8d5', **widget_defaults),
+                widget.GroupBox(borderwidth=2, inactive='969696', this_current_screen_border='eee8d5', this_screen_border='eee8d5', font='FiraCode Nerd Font', fontsize=20, highlight_method='line'),
                 widget.Prompt(**widget_defaults),
                 widget.Spacer(),
                 widget.CheckUpdates(
@@ -276,7 +278,7 @@ screens = [
                     scroll_chars=None,
                     stop_pause_text='',
                     **widget_defaults
-                ),       
+                ),
                 widget.BatteryIcon(
                        ),
                 widget.Battery(charge_char='+', discharge_char='', unknown_char='', format='{char}{percent:2.0%}', **widget_defaults),
@@ -291,7 +293,7 @@ screens = [
 					),
 				widget.Spacer(length = 10),
             ],
-            24, margin=[10, 16, 0, 16] # N E S W
+            30, margin=[10, 16, 0, 16] # N E S W
         ),
     ),
 ]
