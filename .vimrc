@@ -24,6 +24,9 @@ Plug 'vim-airline/vim-airline-themes'
 " IndentLine Plugin
 Plug 'Yggdroot/indentLine'
 
+" vim-sublime-monokai
+Plug 'ErichDonGubler/vim-sublime-monokai'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Settings
@@ -32,17 +35,22 @@ set encoding=utf-8                                  " Set encoding to utf-8
 set number                                          " Show line numbers on the sidebar
 
 " Colours
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 set termguicolors                                   " Enable 24-bit colors on terminal
 syntax enable                                       " Enable syntax highlighting
 set background=dark                                 " Use colors that suit a dark background
-colorscheme gruvbox                                 " Change colorscheme
+" colorscheme gruvbox                                 " Change colorscheme
+colorscheme sublimemonokai
 
 " Search
 set hlsearch                                        " Enables search result highlighting
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Airline
 let g:airline#extensions#tabline#enabled = 1        " Enable the list of buffers
-let g:airline_theme='powerlineish'                  " Match airline theme with vim colorscheme
+let g:airline_theme='powerlineish'                  " Match airline theme with vim colorscheme 
 let g:airline_powerline_fonts = 1                   " Use powerline fonts for airline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" NERDTree
