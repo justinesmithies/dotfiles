@@ -8,7 +8,7 @@ configuration {
 * {
 	background-color: #002c3e50;
 	text-color:       #EFEFEF;
-    font: "Hack Nerd Font Mono 12";
+    font: "FiraCode Nerd Font 12";
  
 	line-margin:     0;
 	line-padding:    0;

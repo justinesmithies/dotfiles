@@ -3,7 +3,7 @@ configuration {
 	width: 25;
 	lines: 10;
 /*	columns: 1;*/
-	font: "Hack Nerd Font Mono 12";
+	font: "FiraCode Nerd Font 12";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
