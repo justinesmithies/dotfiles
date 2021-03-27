@@ -1,7 +1,7 @@
 # Various dotfiles for my [Qtile](http://www.qtile.org/) setup.
 Qtile is a very nice, hackable tiling window manager written and configured in Python.
 
-![ScreenShot](screenshot.png)
+![ScreenShot](screenshot.jpg)
 
 ## Keybindings
 ### Window manager controls
