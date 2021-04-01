@@ -31,9 +31,11 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile import hook
+from libqtile.command import lazy
 from datetime import datetime as dt
 import os
 import subprocess
+from libqtile.utils import send_notification
 
 # When application launched automatically focus it's group
 @hook.subscribe.client_new
@@ -81,6 +83,17 @@ def custom_strftime(format, t):
 
 def custom_date():
 	return custom_strftime('%A {S} %B', dt.now())
+
+from libqtile.utils import send_notification
+
+
+def right_clicked():
+    # Read your file and store contents in a variable
+    with open("/tmp/network.tmp", "r") as tmpfile:
+        tmp = tmpfile.read()
+
+    # Send the notification - you could replace this with subprocess calling "notify-send" if you'd prefer!
+    send_notification('Connection:', tmp)
 
 mod = "mod4"
 
@@ -257,9 +270,9 @@ screens = [
         top=bar.Bar(
             [
                 widget.Spacer(length = 10),
+                widget.GroupBox(borderwidth=2, inactive='969696', this_current_screen_border='eee8d5', this_screen_border='eee8d5', font='FiraCode Nerd Font', fontsize=20, highlight_method='line'),
                 widget.CurrentLayoutIcon(scale = 0.7),
                 widget.CurrentLayout(**widget_defaults),
-                widget.GroupBox(borderwidth=2, inactive='969696', this_current_screen_border='eee8d5', this_screen_border='eee8d5', font='FiraCode Nerd Font', fontsize=20, highlight_method='line'),
                 widget.Prompt(**widget_defaults),
                 widget.Spacer(),
                 widget.CheckUpdates(
@@ -284,6 +297,7 @@ screens = [
                 widget.Battery(charge_char='+', discharge_char='', unknown_char='', format='{char}{percent:2.0%}', **widget_defaults),
                 widget.Volume(emoji = True),
                 widget.Volume(**widget_defaults),
+                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/network.sh")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/network.sh ShowInfo"), shell=True), 'Button3': lambda: qtile.cmd_spawn(terminal+' -e nmtui', shell=True)}),
                 widget.Systray(),
                 widget.Spacer(length = 10),
                 widget.GenPollText(func=custom_date, update_interval=1, **widget_defaults),
@@ -297,8 +311,6 @@ screens = [
         ),
     ),
 ]
-
-
 
 # Drag floating layouts.
 mouse = [
