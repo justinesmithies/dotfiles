@@ -40,7 +40,7 @@ set termguicolors                                   " Enable 24-bit colors on te
 syntax enable                                       " Enable syntax highlighting
 set background=dark                                 " Use colors that suit a dark background
 colorscheme gruvbox                                 " Change colorscheme
-"colorscheme monokai
+
 " Search
 set hlsearch                                        " Enables search result highlighting
 
