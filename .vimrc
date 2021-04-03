@@ -39,8 +39,8 @@ set number                                          " Show line numbers on the s
 set termguicolors                                   " Enable 24-bit colors on terminal
 syntax enable                                       " Enable syntax highlighting
 set background=dark                                 " Use colors that suit a dark background
-"colorscheme gruvbox                                 " Change colorscheme
-colorscheme monokai
+colorscheme gruvbox                                 " Change colorscheme
+"colorscheme monokai
 " Search
 set hlsearch                                        " Enables search result highlighting
 
