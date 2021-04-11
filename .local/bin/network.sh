@@ -11,11 +11,11 @@
 # nmcli connection show --active | grep 'wifi' | awk '{ print $4 }' FS=' '
 
 function ShowInfo {
-	if [[ "$(nmcli connection show --active | grep -oh "\w*ethernet\w*")" == "ethernet" ]]; then
+	if [ "$(nmcli connection show --active | grep -oh "\w*ethernet\w*")" == "ethernet" ]; then
 		wan="$(wget -qqO- 'https://duckduckgo.com/?q=what+is+my+ip' | grep -Pow 'Your IP address is \K[0-9.]+')"
 		connection="$(nmcli connection show --active | grep 'ethernet' | awk '{ print $6 }' FS=' '): $(nmcli connection show --active | grep 'ethernet' | awk '{ print $1 }' FS='  ') - $(nmcli -t -f IP4.ADDRESS dev show $(nmcli connection show --active | grep 'ethernet' | awk '{ print $6 }' FS=' ') | awk '{print $2}' FS='[:/]')
 WAN IP: $wan"
-	elif [[ "$(nmcli connection show --active | grep -oh "\w*wifi\w*")" == "wifi" ]]; then
+	elif [ "$(nmcli connection show --active | grep -oh "\w*wifi\w*")" == "wifi" ]; then
 		wan="$(wget -qqO- 'https://duckduckgo.com/?q=what+is+my+ip' | grep -Pow 'Your IP address is \K[0-9.]+')"
 		connection="$(nmcli connection show --active | grep 'wifi' | awk '{ print $4 }' FS=' '): $(nmcli connection show --active | grep 'wifi' | awk '{ print $1 }' FS='  ') - $(nmcli -t -f IP4.ADDRESS dev show $(nmcli connection show --active | grep 'wifi' | awk '{ print $4 }' FS=' ') | awk '{print $2}' FS='[:/]')
 WAN IP: $wan"
@@ -26,9 +26,9 @@ WAN IP: $wan"
 }
 
 function IconUpdate() {
-	if [[ "$(nmcli connection show --active | grep -oh "\w*ethernet\w*")" == "ethernet" ]]; then
+	if [ "$(nmcli connection show --active | grep -oh "\w*ethernet\w*")" == "ethernet" ]; then
 		icon="  "
-	elif [[ "$(nmcli connection show --active | grep -oh "\w*wifi\w*")" == "wifi" ]]; then
+	elif [ "$(nmcli connection show --active | grep -oh "\w*wifi\w*")" == "wifi" ]; then
 		icon="  "
 	else
 		icon="  "
