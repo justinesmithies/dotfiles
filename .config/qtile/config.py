@@ -82,7 +82,7 @@ def custom_strftime(format, t):
     return t.strftime(format).replace('{S}', str(t.day) + suffix(t.day))
 
 def custom_date():
-	return custom_strftime('%A {S} %B', dt.now())
+	return custom_strftime('%A {S} %B %Y - %H:%M', dt.now())
 
 from libqtile.utils import send_notification
 
@@ -267,10 +267,6 @@ screens = [
                 widget.Prompt(**widget_defaults),
                 widget.Spacer(),
                 widget.GenPollText(func=custom_date, update_interval=1, **widget_defaults),
-                widget.Clock(
-					**widget_defaults,
-					format='%H:%M'
-					),
                 widget.Spacer(),
                 widget.CheckUpdates(
                        **widget_defaults,
