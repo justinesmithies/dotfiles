@@ -53,26 +53,21 @@ fi
 
 # Network manager
 
-if cmd_exist nm-applet ; then
-    __kill nm-applet
-    __start nm-applet
-fi
+#if cmd_exist nm-applet ; then
+    #__kill nm-applet
+    #__start nm-applet
+#fi
 
 # Nextcloud
 
-if cmd_exist nextcloud ; then
-    __kill nextcloud
-    __start nextcloud
-fi
+#if cmd_exist nextcloud ; then
+#    __kill nextcloud
+#    __start nextcloud
+#fi
 
 # Telegram
 
-if cmd_exist telegram-desktop ; then
-    __kill telegram-desktop
-    __start telegram-desktop -startintray
-fi
-
-if cmd_exist light-locker ; then
-    __kill light-locker
-    __start light-locker
-fi
+#if cmd_exist telegram-desktop ; then
+    #__kill telegram-desktop
+    #__start telegram-desktop -startintray
+#fi
