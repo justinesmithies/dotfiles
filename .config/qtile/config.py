@@ -86,15 +86,6 @@ def custom_date():
 
 from libqtile.utils import send_notification
 
-
-def right_clicked():
-    # Read your file and store contents in a variable
-    with open("/tmp/network.tmp", "r") as tmpfile:
-        tmp = tmpfile.read()
-
-    # Send the notification - you could replace this with subprocess calling "notify-send" if you'd prefer!
-    send_notification('Connection:', tmp)
-
 mod = "mod4"
 
 terminal = 'kitty'
@@ -274,6 +265,12 @@ screens = [
                 widget.CurrentLayoutIcon(scale = 0.7),
                 widget.CurrentLayout(**widget_defaults),
                 widget.Prompt(**widget_defaults),
+                widget.Spacer(),
+                widget.GenPollText(func=custom_date, update_interval=1, **widget_defaults),
+                widget.Clock(
+					**widget_defaults,
+					format='%H:%M'
+					),
                 widget.Spacer(),
                 widget.CheckUpdates(
                        **widget_defaults,
