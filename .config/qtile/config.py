@@ -67,7 +67,7 @@ import time
 
 @hook.subscribe.client_new
 def slight_delay(window):
-	time.sleep(0.02)
+	time.sleep(0.04)
 
 @hook.subscribe.startup_once
 def autostart():
