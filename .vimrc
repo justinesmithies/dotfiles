@@ -43,6 +43,28 @@ colorscheme gruvbox                                 " Change colorscheme
 " Search
 set hlsearch                                        " Enables search result highlighting
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Startify
+
+let g:startify_session_dir = $HOME .  '/.vim/sessions/'
+let g:startify_lists = [
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose' ]
+
+function! MakeSession()
+  let b:sessiondir = $HOME . "/.vim/sessions"
+  if (filewritable(b:sessiondir) != 2)
+    exe 'silent !mkdir -p ' b:sessiondir
+    redraw!
+  endif
+  let b:filename = 'session.vim'
+  exe 'SSave! ' . b:filename
+endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Airline
 let g:airline#extensions#tabline#enabled = 1        " Enable the list of buffers
 let g:airline_theme='powerlineish'                  " Match airline theme with vim colorscheme 
@@ -78,14 +100,15 @@ let g:indentLine_enabled = 0
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
 " Get both NERDTree and Startify working at startup if no args passed
-
 autocmd StdinReadPre * let g:isReadingFromStdin = 1
-autocmd VimEnter * if !argc() && !exists('g:isReadingFromStdin') | Startify | NERDTree | wincmd w | endif
+autocmd VimEnter * if !argc() && !exists('g:isReadingFromStdin') | Startify | endif
+
+" Save session on exit
+au VimLeave * :call MakeSession()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Mappings
 " Silent version of the super user edit, sudo tee trick.
 cnoremap W!! execute 'silent! write !sudo /usr/bin/tee "%" >/dev/null' <bar> edit!
 " Talkative version of the super user edit, sudo tee trick.
 cmap w!! w !sudo /usr/bin/tee >/dev/null "%"
-
 
