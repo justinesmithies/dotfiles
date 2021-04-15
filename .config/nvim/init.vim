@@ -4,6 +4,7 @@ call plug#begin("~/.config/nvim/plugged")
 
 " Make sure you use single quotes
 
+" Deoplete Plugin
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " vim-startify Plugin
