@@ -42,12 +42,15 @@ set termguicolors                                   " Enable 24-bit colors on te
 syntax enable                                       " Enable syntax highlighting
 set background=dark                                 " Use colors that suit a dark background
 colorscheme gruvbox                                 " Change colorscheme
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE                   " Make sure background stays transparent
 
 " Search
 set hlsearch                                        " Enables search result highlighting
 
 let g:deoplete#enable_at_startup = 1
+
+set wildmode=longest,list,full
+set wildmenu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Startify
 
