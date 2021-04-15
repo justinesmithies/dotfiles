@@ -83,10 +83,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Toggle TagBar
 :nnoremap <F8> :TagbarToggle<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Startify
-
-" autocmd BufEnter * if line2byte('.') == -1 && len(tabpagebuflist()) == 2 | Startify | endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" IndentLines
 " Disable IndentLines by default
 let g:indentLine_enabled = 0
@@ -95,9 +91,6 @@ let g:indentLine_enabled = 0
 :noremap <F5> :IndentLinesToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Auto commands
-" Makes the background transparent. Leave these out if you're not using a transparent
-" terminal.
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
 " Get both NERDTree and Startify working at startup if no args passed
 autocmd StdinReadPre * let g:isReadingFromStdin = 1
