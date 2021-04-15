@@ -16,7 +16,7 @@ alias ranger="ranger-fix"
 
 #PS1='[\u@\h \W]\$ '
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
-export EDITOR=vim
+export EDITOR=nvim
 export PATH=$PATH:~/.local/bin
 
 vimargs() {
