@@ -36,15 +36,13 @@ call plug#end()
 set encoding=utf-8                                  " Set encoding to utf-8
 set number                                          " Show line numbers on the sidebar
 set clipboard=unnamedplus                           " Copy paste between vim and everything else
+
 " Colours
-"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-
-"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
 set termguicolors                                   " Enable 24-bit colors on terminal
 syntax enable                                       " Enable syntax highlighting
 set background=dark                                 " Use colors that suit a dark background
 colorscheme gruvbox                                 " Change colorscheme
+hi Normal guibg=NONE ctermbg=NONE
 
 " Search
 set hlsearch                                        " Enables search result highlighting
