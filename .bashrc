@@ -21,7 +21,7 @@ export PATH=$PATH:~/.local/bin
 
 vimargs() {
     #do things with parameters like $1 such as
-    (kitty --class vim -e vim $@ & ) > /dev/null 2>&1
+   (kitty --class vim -e nvim $@ & ) > /dev/null 2>&1
 }
 
 # startx if on matching VT
