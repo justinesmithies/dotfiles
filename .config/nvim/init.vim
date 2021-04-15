@@ -4,6 +4,8 @@ call plug#begin("~/.config/nvim/plugged")
 
 " Make sure you use single quotes
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " vim-startify Plugin
 Plug 'mhinz/vim-startify'
 
@@ -45,6 +47,8 @@ colorscheme gruvbox                                 " Change colorscheme
 
 " Search
 set hlsearch                                        " Enables search result highlighting
+
+let g:deoplete#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Startify
 
