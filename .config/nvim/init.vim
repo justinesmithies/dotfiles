@@ -74,6 +74,16 @@ let g:startify_session_persistence = 1                                 " Save se
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" COC
 
+" CoC extensions to be auto installed
+let g:coc_node_args = ['--max-old-space-size=8192']
+let g:coc_global_extensions = [
+    \ 'coc-css',
+    \ 'coc-html',
+    \ 'coc-json',
+    \ 'coc-phpls',
+    \ 'coc-sh',
+    \]
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
