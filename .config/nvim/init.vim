@@ -72,6 +72,22 @@ let g:startify_lists = [
 let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose' ] " Close NERDTRee before saving session
 let g:startify_session_persistence = 1                                 " Save session on exit to session.vim
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" COC
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Airline
 let g:airline#extensions#tabline#enabled = 1        " Enable the list of buffers
 let g:airline_theme='powerlineish'                  " Match airline theme with vim colorscheme 
