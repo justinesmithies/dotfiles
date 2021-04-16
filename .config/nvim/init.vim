@@ -13,8 +13,8 @@ call plug#begin("~/.config/nvim/plugged")
 
 " Make sure you use single quotes
 
-" Deoplete Plugin
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" COC Plugin
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " vim-startify Plugin
 Plug 'mhinz/vim-startify'
@@ -55,8 +55,6 @@ hi Normal guibg=NONE ctermbg=NONE                   " Make sure background stays
 
 " Search
 set hlsearch                                        " Enables search result highlighting
-
-let g:deoplete#enable_at_startup = 1
 
 set wildmode=longest,list,full
 set wildmenu
