@@ -73,7 +73,7 @@ def slight_delay(window):
 def autostart():
     home = os.path.expanduser('~')
     subprocess.Popen([home + '/.config/qtile/autostart.sh'])
-        
+
 # Add th, nd or st to the date - use custom_date in text box
 def suffix(d):
     return 'th' if 11<=d<=13 else {1:'st',2:'nd',3:'rd'}.get(d%10, 'th')
@@ -118,7 +118,7 @@ keys = [
         desc="Move focus down in stack pane"),
     Key([mod], "j", lazy.layout.up(),
         desc="Move focus up in stack pane"),
-        
+
     #Key([mod], "h", lazy.layout.left()),
 	#Key([mod], "l", lazy.layout.right()),
 	Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
@@ -135,7 +135,7 @@ keys = [
     Key([mod], "m",
              lazy.layout.maximize(),
              desc='toggle window between minimum and maximum sizes'
-             ), 
+             ),
 	Key([mod], "h",
              lazy.layout.grow(),
              lazy.layout.increase_nmaster(),
@@ -179,25 +179,25 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod, "control"], "p", lazy.spawn("rofi -show p -modi p:"+home+"/.local/bin/rofi-power-menu -width 20 -lines 6")),
-        
+
     # Rofi
     Key(["control"], "space", lazy.spawn("rofi -show drun")),
-        
+
     # ------------ Hardware Configs ------------
     # Volume
     Key([], "XF86AudioMute", lazy.spawn(home + "/.local/bin/volumecontrol mute")),
     Key([], "XF86AudioLowerVolume", lazy.spawn(home + "/.local/bin/volumecontrol down")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn(home + "/.local/bin/volumecontrol up")),
-    
+
     # Media keys
     Key([], "XF86AudioPlay", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.PlayPause")),
     Key([], "XF86AudioNext", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Next")),
     Key([], "XF86AudioPrev", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Previous")),
-    
+
     # Brightness
     Key([], "F2", lazy.spawn(home + "/.local/bin/brightnesscontrol down")),
     Key([], "F3", lazy.spawn(home + "/.local/bin/brightnesscontrol up")),
-    
+
     # Screenshot
     # Save screen to clipboard
     Key([], "Print", lazy.spawn("/usr/bin/escrotum -C")),
@@ -206,7 +206,7 @@ keys = [
 	# Capture region of screen to clipboard
 	Key([mod, "shift"], "s", lazy.spawn("/usr/bin/escrotum -Cs")),
 ]
-    
+
 # Groups with matches
 
 workspaces = [
@@ -225,7 +225,7 @@ for workspace in workspaces:
     groups.append(Group(workspace["name"], matches=matches, layout="monadtall"))
     keys.append(Key([mod], workspace["key"], lazy.group[workspace["name"]].toscreen()))
     keys.append(Key([mod, "shift"], workspace["key"], lazy.window.togroup(workspace["name"])))
-   
+
 ##### DEFAULT THEME SETTINGS FOR LAYOUTS #####
 layout_theme = {"border_width": 3,
                 "margin": 16,
@@ -286,6 +286,7 @@ screens = [
                     **widget_defaults
                 ),
                 widget.Systray(),
+                #widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/test.sh")).decode()),
                 widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/volume.sh")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol up"), shell=True), 'Button2': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol mute"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol down"), shell=True)}),
                 widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/battery.sh")).decode()),
                 widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/network.sh")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/network.sh ShowInfo"), shell=True), 'Button3': lambda: qtile.cmd_spawn(terminal+' -e nmtui', shell=True)}),
