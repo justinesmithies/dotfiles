@@ -18,6 +18,7 @@ command -v lsd > /dev/null && alias ls='lsd'
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 export EDITOR=nvim
 export PATH=$PATH:~/.local/bin
+export STARSHIP_CONFIG=~/.config/starship/config.toml
 
 vimargs() {
     #do things with parameters like $1 such as
@@ -29,3 +30,7 @@ vimargs() {
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
+
+# Starship
+eval "$(starship init bash)"
+
