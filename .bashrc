@@ -12,7 +12,7 @@ alias vim='vimargs'
 alias ssh='kitty +kitten ssh'
 alias yay='yay --color=auto'
 alias ranger='ranger-fix'
-alias 
+alias cat='bat --paging=never' 
 
 #PS1='[\u@\h \W]\$ '
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
