@@ -38,7 +38,7 @@ Plug 'vim-airline/vim-airline-themes'
 " IndentLine Plugin
 Plug 'Yggdroot/indentLine'
 
-" vim-hexokinase
+" vim-hexokinase Plugin
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 call plug#end()
