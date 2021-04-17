@@ -15,7 +15,6 @@ alias ranger='ranger-fix'
 command -v bat > /dev/null && alias cat='bat --paging=never' 
 command -v lsd > /dev/null && alias ls='lsd'
 
-#PS1='[\u@\h \W]\$ '
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 export EDITOR=nvim
 export PATH=$PATH:~/.local/bin
