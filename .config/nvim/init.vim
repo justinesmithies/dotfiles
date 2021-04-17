@@ -38,8 +38,8 @@ Plug 'vim-airline/vim-airline-themes'
 " IndentLine Plugin
 Plug 'Yggdroot/indentLine'
 
-" vim-css-color
-Plug 'ap/vim-css-color'
+" vim-hexokinase
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 call plug#end()
 
@@ -77,6 +77,13 @@ let g:startify_lists = [
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
           \ { 'type': 'commands',  'header': ['   Commands']       },
           \ ]
+
+let g:startify_bookmarks = [
+            \ { 'i': '~/.config/nvim/init.vim' },
+            \ { 'b': '~/.bashrc' },
+            \ '~/Sync',
+            \ ]
+
 let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose' ] " Close NERDTRee before saving session
 let g:startify_session_persistence = 1                                 " Save session on exit to session.vim
 
@@ -105,6 +112,11 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Hexokinase
+
+" Neovim default
+let g:Hexokinase_highlighters = [ 'virtual' ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Airline
 let g:airline#extensions#tabline#enabled = 1        " Enable the list of buffers
