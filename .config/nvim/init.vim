@@ -52,6 +52,7 @@ set nocompatible                                    " Use Vim defaults (much bet
 set hlsearch                                        " Highlight search results
 set ignorecase                                      " Search ignoring case
 set smartcase                                       " Do not ignore case if the search patter has uppercase
+set incsearch                                       " Incremental search
 
 " Colours
 set termguicolors                                   " Enable 24-bit colors on terminal
