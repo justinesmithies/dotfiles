@@ -67,13 +67,29 @@ add_newline = false
 [username]
 style_user = "green bold"
 style_root = "red bold"
-format = "[$user]($style)"
+format = "(bold green)[$user]($style)"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format =  "(bold green)[@$hostname](bold green) "
+format =  "[@$hostname ](green bold)"
+disabled = false
+
+[directory]
+read_only = " 🔒"
+read_only_style = "fg:blue bold"
+style = "blue bold"
+format = "[$path ]($style)[$read_only]($read_only_style)"
+
+[git_branch]
+symbol = " "
+always_show_remote = false
+format = "[on $symbol$branch]($style) "
+style = "purple bold"
+truncation_length = "2^63 - 1"
+truncation_symbol = "…"
+only_attached = false
 disabled = false
 
 # Replace the "❯" symbol in the prompt with "➜"
