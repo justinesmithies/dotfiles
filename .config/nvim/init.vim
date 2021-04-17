@@ -49,6 +49,9 @@ set encoding=utf-8                                  " Set encoding to utf-8
 set number                                          " Show line numbers on the sidebar
 set clipboard=unnamedplus                           " Copy paste between vim and everything else
 set nocompatible                                    " Use Vim defaults (much better!)
+set hlsearch                                        " Highlight search results
+set ignorecase                                      " Search ignoring case
+set smartcase                                       " Do not ignore case if the search patter has uppercase
 
 " Colours
 set termguicolors                                   " Enable 24-bit colors on terminal
@@ -110,7 +113,7 @@ let g:airline_powerline_fonts = 1                   " Use powerline fonts for ai
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" NERDTree
 let NERDTreeShowHidden=1                            " Show hidden files on NERDTree
 
-" Toggle NerdTree
+" Toggle NERDTree
 :nnoremap <F7> :NERDTreeToggle<CR>
 
 " Exit Vim if NERDTree is the only split
