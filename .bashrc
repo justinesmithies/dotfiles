@@ -13,7 +13,13 @@ alias ssh='kitty +kitten ssh'
 alias yay='yay --color=auto'
 alias ranger='ranger-fix'
 command -v bat > /dev/null && alias cat='bat --paging=never' 
-command -v lsd > /dev/null && alias ls='lsd'
+
+# If not in xterm then don't alias ls='lsd'
+case $TERM in
+  xterm*|konsole*)
+    command -v lsd > /dev/null && alias ls='lsd';;
+  *)
+esac
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 export EDITOR=nvim
@@ -31,6 +37,13 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
 
+# If not in xterm don't start starship
+case $TERM in
+  xterm*|konsole*)
+    eval "$(starship init bash)";;
+  *)
+esac
+
 # Starship
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 
