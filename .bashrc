@@ -9,9 +9,10 @@ source <(kitty + complete setup bash)
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='vimargs'
-alias ssh="kitty +kitten ssh"
-
-alias ranger="ranger-fix"
+alias ssh='kitty +kitten ssh'
+alias yay='yay --color=auto'
+alias ranger='ranger-fix'
+alias 
 
 #PS1='[\u@\h \W]\$ '
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
