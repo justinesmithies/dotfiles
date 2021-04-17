@@ -16,6 +16,9 @@ call plug#begin("~/.config/nvim/plugged")
 " COC Plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" vim-polyglot Plugin
+Plug 'sheerun/vim-polyglot'
+
 " vim-startify Plugin
 Plug 'mhinz/vim-startify'
 
@@ -45,6 +48,7 @@ call plug#end()
 set encoding=utf-8                                  " Set encoding to utf-8
 set number                                          " Show line numbers on the sidebar
 set clipboard=unnamedplus                           " Copy paste between vim and everything else
+set nocompatible                                    " Use Vim defaults (much better!)
 
 " Colours
 set termguicolors                                   " Enable 24-bit colors on terminal
