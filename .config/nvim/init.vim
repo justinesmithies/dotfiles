@@ -13,7 +13,7 @@ call plug#begin("~/.config/nvim/plugged")
 
 " Make sure you use single quotes
 
-" COC Plugin
+" coc-nvim Plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " vim-polyglot Plugin
