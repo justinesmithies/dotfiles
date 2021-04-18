@@ -9,7 +9,7 @@ Below is a list of some of the packages that I use for my current setup.
 
 - **Operating System** --- [Archlinux](https://www.archlinux.org/)
 - **Boot Loader** --- [Grub](https://wiki.archlinux.org/index.php/GRUB)
-- **Window Manager** --- [qtile](https://aur.archlinux.org/packages/qtile-git)
+- **Window Manager** --- [Qtile](https://aur.archlinux.org/packages/qtile-git)
 - **Screen Locker** --- [Betterlockscreen](https://aur.archlinux.org/packages/betterlockscreen)
 - **Shell** --- [Bash](https://wiki.archlinux.org/index.php/Bash) using [Starship](https://aur.archlinux.org/packages/starship-git/) 
 - **Terminal** --- [Kitty](https://wiki.archlinux.org/index.php/Kitty)
