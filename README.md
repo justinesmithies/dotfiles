@@ -19,6 +19,17 @@ Below is a list of some of the packages that I use for my current setup.
 - **File Manager** --- [Ranger](https://aur.archlinux.org/packages/ranger-git)
 - **Editor** --- [Neovim](https://aur.archlinux.org/packages/neovim-git)
   - **Plugins**
+	- [gruvbox](https://github.com/morhetz/gruvbox)
+	- [coc.nvim](https://github.com/neoclide/coc.nvim)
+	- [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+	- [vim-startify](https://github.com/mhinz/vim-startify)
+	- [tagbar](https://github.com/preservim/tagbar)
+	- [nerdtree](https://github.com/preservim/nerdtree)
+	- [vim-devicons](https://github.com/ryanoasis/vim-devicons)
+	- [vim-airline](https://github.com/vim-airline/vim-airline)
+	- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+	- [indentLine](https://github.com/Yggdroot/indentLine)
+	- [vim-hexokinase](https://github.com/rrethy/vim-hexokinase)
 - **Web Browser** --- [Firefox](https://wiki.archlinux.org/index.php/Firefox)
 
 ## Keybindings
