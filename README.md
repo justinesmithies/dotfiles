@@ -17,7 +17,7 @@ Below is a list of some of the packages that I use for my current setup.
 - [**Notification Daemon**](https://wiki.archlinux.org/index.php/Desktop_notifications) --- [Dunst](https://wiki.archlinux.org/index.php/Dunst)
 - [**Application Launcher**](https://wiki.archlinux.org/index.php/List_of_applications/Other#Application_launchers) --- [Rofi](https://wiki.archlinux.org/index.php/Rofi)
 - [**File Manager**](https://wiki.archlinux.org/index.php/File_manager_functionality) --- [Ranger](https://aur.archlinux.org/packages/ranger-git)
-- [**Text Editor**](https://wiki.archlinux.org/index.php/List_of_applications#Text_editors) --- [Neovim](https://aur.archlinux.org/packages/neovim-git)
+- [**Text Editor**](https://wiki.archlinux.org/index.php/List_of_applications#Text_editors) --- [Neovim](https://aur.archlinux.org/packages/neovim-git)..
 ⋅⋅*[**Neovim Plugins**]()
 - [**Web Browser**](https://wiki.archlinux.org/index.php/List_of_applications/Internet#Web_browsers) --- [Firefox](https://wiki.archlinux.org/index.php/Firefox)
 
