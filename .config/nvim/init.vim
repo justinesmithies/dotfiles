@@ -13,6 +13,9 @@ call plug#begin("~/.config/nvim/plugged")
 
 " Make sure you use single quotes
 
+" vim-gruvbox Plugin
+Plug 'morhetz/gruvbox'
+
 " coc-nvim Plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
