@@ -18,7 +18,7 @@ Below is a list of some of the packages that I use for my current setup.
 - **Application Launcher** --- [Rofi](https://wiki.archlinux.org/index.php/Rofi)
 - **File Manager** --- [Ranger](https://aur.archlinux.org/packages/ranger-git)
 - **Editor** --- [Neovim](https://aur.archlinux.org/packages/neovim-git)
-  - **Plugins**
+  * - **Plugins**
 	- [gruvbox](https://github.com/morhetz/gruvbox)
 	- [coc.nvim](https://github.com/neoclide/coc.nvim)
 	- [vim-polyglot](https://github.com/sheerun/vim-polyglot)
