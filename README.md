@@ -3,7 +3,7 @@ Qtile is a very nice, hackable tiling window manager written and configured in P
 
 ![ScreenShot](screenshot.jpg)
 
-## :page_facing_up: Details
+## Details
 
 Below is a list of some of the packages that I use for my current setup.
 
