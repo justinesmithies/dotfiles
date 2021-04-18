@@ -36,10 +36,10 @@ Below is a list of some of the packages that I use for my current setup.
 ### Window manager controls
 | Keys                      | Action                    |
 | ------------------------- | ------------------------- |
-| CTRL + MOD + r            | restart Qtile             |
-| CTRL + MOD + q            | shutdown Qtile            |
-| MOD + w                   | kill window               |
-| MOD + r                   | spawn program             |
-| MOD + RETURN              | spawn terminal            |
-| CTRL + SPACE              | Rofi menu                  |
-| CTRL + MOD + p            | Rofi power menu            |
+| <kbd>CTRL + MOD + r</kbd>            | restart Qtile             |
+| <kbd>CTRL + MOD + q</kbd>            | shutdown Qtile            |
+| <kbd>MOD + w</kbd>                   | kill window               |
+| <kbd>MOD + r</kbd>                   | spawn program             |
+| <kbd>MOD + RETURN</kbd>              | spawn terminal            |
+| <kbd>CTRL + SPACE</kbd>              | Rofi menu                  |
+| <kbd>CTRL + MOD + p</kbd>            | Rofi power menu            |
