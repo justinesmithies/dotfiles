@@ -44,6 +44,3 @@ case $TERM in
   *)
 esac
 
-# Starship
-# eval "$(starship init bash)"
-
