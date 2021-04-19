@@ -32,7 +32,7 @@ Below is a list of some of the packages that I use for my current setup.
 	- [vim-hexokinase](https://github.com/rrethy/vim-hexokinase)
 - **Web Browser** --- [Firefox](https://wiki.archlinux.org/index.php/Firefox)
 - **PDF Viewer** -- [Zathura](https://wiki.archlinux.org/index.php/Zathura)
--
+
 ## Keybindings
 ### Window manager controls
 | Keys                      | Action                    |
