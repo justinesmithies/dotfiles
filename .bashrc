@@ -4,6 +4,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 source <(kitty + complete setup bash)
 
 alias ls='ls --color=auto'
@@ -22,9 +26,11 @@ case $TERM in
 esac
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
-export EDITOR=nvim
+export EDITOR="nvim"
 export PATH=$PATH:~/.local/bin
 export STARSHIP_CONFIG=~/.config/starship/config.toml
+export BROWSER="firefox"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 vimargs() {
     #do things with parameters like $1 such as
