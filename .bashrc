@@ -20,6 +20,9 @@ bind "set show-all-if-ambiguous on"
 # only start cycling full results on the second Tab press
 bind "set menu-complete-display-prefix on"
 
+# Colour autocomplete suggestions
+bind "set colored-stats on"
+
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='vimargs'
