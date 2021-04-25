@@ -81,9 +81,9 @@ let g:startify_lists = [
           \ ]
 
 let g:startify_bookmarks = [
-            \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'b': '~/.bashrc' },
-            \ '~/Sync',
+            \ { 'i': '~/.config/nvim/init.vim' },
+            \ { 'q': '~/.config/qtile/config.py' },
             \ ]
 
 let g:startify_session_before_save = [ 'silent! tabdo NERDTreeClose' ] " Close NERDTRee before saving session
