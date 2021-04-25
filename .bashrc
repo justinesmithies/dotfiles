@@ -30,6 +30,7 @@ alias ssh='kitty +kitten ssh'
 alias yay='yay --color=auto'
 alias ranger='ranger-fix'
 command -v bat > /dev/null && alias cat='bat --paging=never' 
+alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # If not in xterm then don't alias ls='lsd'
 case $TERM in
