@@ -9,7 +9,7 @@
 # https://gist.github.com/sebastiencs/5d7227f388d93374cebdf72e783fbd6a
 
 function send_notification {
-  #icon=/usr/share/icons/Papirus-Dark/16x16/actions/brightnesssettings.svg
+  icon=/usr/share/icons/Papirus-Dark/16x16/actions/brightnesssettings.svg
   brightness=$(brightnessctl --device='amdgpu_bl0' get)
   # Make the bar with the special character ─ (it's not dash -)
   # https://en.wikipedia.org/wiki/Box-drawing_character
