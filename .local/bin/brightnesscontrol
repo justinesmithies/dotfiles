@@ -9,12 +9,14 @@
 # https://gist.github.com/sebastiencs/5d7227f388d93374cebdf72e783fbd6a
 
 function send_notification {
-  icon=/usr/share/icons/Papirus-Dark/16x16/actions/brightnesssettings.svg
-  brightness=$(blight -d backlight/intel_backlight get brightness)
+  #icon=/usr/share/icons/Papirus-Dark/16x16/actions/brightnesssettings.svg
+  brightness=$(brightnessctl --device='amdgpu_bl0' get)
   # Make the bar with the special character ─ (it's not dash -)
   # https://en.wikipedia.org/wiki/Box-drawing_character
-  bar=$(seq -s "─" 0 $((brightness / 10000)) | sed 's/[0-9]//g')
-  test=$((brightness/1200))
+  bar=$(seq -s "─" 0 $((brightness / 10 )) | sed 's/[0-9]//g')
+  test=$((brightness *100 / 255 ))
+  echo $bar
+  echo $test
   # Send the notification
   dunstify -i "$icon" -r 5555 -u normal "$bar  $test"
 }
@@ -22,13 +24,13 @@ function send_notification {
 case $1 in
   up)
     # increase the backlight by 1%
-    blight set +1%
+    brightnessctl --device='amdgpu_bl0' set +1%
     send_notification
     canberra-gtk-play -i audio-volume-change
     ;;
   down)
     # decrease the backlight by 1%
-    blight set -1%
+    brightnessctl --device='amdgpu_bl0' set 1%-
     send_notification
     canberra-gtk-play -i audio-volume-change
     ;;
