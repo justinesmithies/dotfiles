@@ -195,8 +195,8 @@ keys = [
     Key([], "XF86AudioPrev", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Previous")),
 
     # Brightness
-    Key([], "F5", lazy.spawn(home + "/.local/bin/brightnesscontrol down")),
-    Key([], "F6", lazy.spawn(home + "/.local/bin/brightnesscontrol up")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn(home + "/.local/bin/brightnesscontrol down")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn(home + "/.local/bin/brightnesscontrol up")),
 
     # Screenshot
     # Save screen to clipboard
