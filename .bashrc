@@ -62,3 +62,4 @@ case $TERM in
     eval "$(starship init bash)";;
   *)
 esac
+
