@@ -15,7 +15,7 @@ set -u
 # All supported choices
 all=(shutdown reboot suspend hibernate logout lockscreen)
 
-# By default, show a ll (i.e., just copy the array)
+# By default, show all (i.e., just copy the array)
 show=("${all[@]}")
 
 declare -A texts
@@ -38,10 +38,10 @@ icons[shutdown]="\uf011"
 icons[cancel]="\u00d7"
 
 declare -A actions
-#actions[lockscreen]="loginctl lock-session $XDG_SESSION_ID"
+#actions[lockscreen]="loginctl lock-session ${XDG_SESSION_ID-}"
 actions[lockscreen]="betterlockscreen -l"
 #actions[switchuser]="???"
-actions[logout]="loginctl terminate-session $XDG_SESSION_ID"
+actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
 actions[suspend]="systemctl suspend"
 actions[hibernate]="systemctl hibernate"
 actions[reboot]="systemctl reboot"
@@ -105,7 +105,7 @@ while true; do
             echo "                     Available choices are lockscreen, logout, suspend,"
             echo "                     hibernate, reboot and shutdown."
             echo "  --[no-]symbols     Show Unicode symbols or not. Requires a font with support"
-            echo "                     for the symbols. Use, for instance, fonts from the"
+           echo "                     for the symbols. Use, for instance, fonts from the"
             echo "                     Nerdfonts collection. By default, they are shown"
             echo "  -h,--help          Show this help text."
             exit 0
@@ -245,3 +245,4 @@ else
     echo "Invalid selection: $selection" >&2
     exit 1
 fi
+ 
