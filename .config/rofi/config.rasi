@@ -56,7 +56,7 @@ configuration {
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
 /*	theme: ;*/
-theme: "~/.config/rofi/themes/jms-theme-1.rasi";
+theme: "~/.config/rofi/themes/jms-theme.rasi";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
