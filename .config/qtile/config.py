@@ -178,7 +178,7 @@ keys = [
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod, "control"], "p", lazy.spawn("rofi -show p -modi p:"+home+"/.local/bin/rofi-power-menu -width 20 -lines 6")),
+    Key([mod, "control"], "p", lazy.spawn(""+home+"/.local/bin/powermenu")),
 
     # Rofi
     Key(["control"], "space", lazy.spawn("rofi -show drun")),
