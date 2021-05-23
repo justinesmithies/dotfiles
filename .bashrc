@@ -26,6 +26,7 @@ bind "set colored-stats on"
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='vimargs'
+alias nvim="vim"
 alias ssh='kitty +kitten ssh'
 alias yay='yay --color=auto'
 alias ranger='ranger-fix'
