@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/jms-theme-1.rasi -i -p Power Menu"
+rofi_command="rofi -theme themes/jms-theme.rasi -i -p Power Menu"
 
 #### Options ###
 power_off="襤 Shutdown"
