@@ -14,11 +14,11 @@ function send_notification {
   # Make the bar with the special character ─ (it's not dash -)
   # https://en.wikipedia.org/wiki/Box-drawing_character
   bar=$(seq -s "─" 0 $((brightness / 10 )) | sed 's/[0-9]//g')
-  test=$((brightness *100 / 255 ))
-  echo $bar
-  echo $test
+  brightness=$((brightness *100 / 255 ))
+  #echo $bar
+  #echo $test
   # Send the notification
-  dunstify -i "$icon" -r 5555 -u normal "$bar  $test"
+  dunstify -i "$icon" -r 5555 -u normal "$bar  $brightness"
 }
 
 case $1 in
@@ -33,5 +33,11 @@ case $1 in
     brightnessctl --device='amdgpu_bl0' set 1%-
     send_notification
     canberra-gtk-play -i audio-volume-change
+    ;;
+  *)
+    brightness=$(brightnessctl --device='amdgpu_bl0' get)
+    brightness=$((brightness *100 / 255 ))
+    icon=""
+    printf "%s" "$icon $brightness" "%"
     ;;
 esac
