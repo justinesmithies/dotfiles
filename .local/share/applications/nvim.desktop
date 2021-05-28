@@ -7,6 +7,6 @@ Exec=kitty --class vim -e nvim
 Name=Neovim
 GenericName=Text Editor
 Comment=Edit text files
-Icon=gvim
+Icon=nvim
 Keywords=Text;editor;
 Categories=Utility;TextEditor;
