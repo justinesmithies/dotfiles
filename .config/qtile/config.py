@@ -185,9 +185,9 @@ keys = [
 
     # ------------ Hardware Configs ------------
     # Volume
-    Key([], "XF86AudioMute", lazy.spawn(home + "/.local/bin/volumecontrol mute")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn(home + "/.local/bin/volumecontrol down")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn(home + "/.local/bin/volumecontrol up")),
+    Key([], "XF86AudioMute", lazy.spawn(home + "/.local/bin/statusbar/volumecontrol mute")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn(home + "/.local/bin/statusbar/volumecontrol down")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn(home + "/.local/bin/statusbar/volumecontrol up")),
 
     # Media keys
     Key([], "XF86AudioPlay", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.PlayPause")),
@@ -195,8 +195,8 @@ keys = [
     Key([], "XF86AudioPrev", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Previous")),
 
     # Brightness
-    Key([], "XF86MonBrightnessDown", lazy.spawn(home + "/.local/bin/brightnesscontrol down")),
-    Key([], "XF86MonBrightnessUp", lazy.spawn(home + "/.local/bin/brightnesscontrol up")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol down")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol up")),
 
     # Screenshot
     # Save screen to clipboard
@@ -266,7 +266,7 @@ screens = [
                 widget.CurrentLayout(**widget_defaults),
                 widget.Prompt(**widget_defaults),
                 widget.Spacer(),
-                widget.GenPollText(func=custom_date, update_interval=1, **widget_defaults, mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/calendar.sh show"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/calendar.sh edit"), shell=True)}),
+                widget.GenPollText(func=custom_date, update_interval=1, **widget_defaults, mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/calendar.sh show"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/calendar.sh edit"), shell=True)}),
                 widget.Spacer(),
                 widget.CheckUpdates(
                        **widget_defaults,
@@ -286,9 +286,9 @@ screens = [
                     **widget_defaults
                 ),
                 widget.Systray(),
-                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/volumecontrol")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol down"), shell=True), 'Button2': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol mute"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol up"), shell=True)}),
-                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/battery.sh")).decode()),
-                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/network.sh")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/network.sh ShowInfo"), shell=True), 'Button3': lambda: qtile.cmd_spawn(terminal+' -e nmtui', shell=True)}),
+                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/statusbar/volumecontrol")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/volumecontrol down"), shell=True), 'Button2': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/volumecontrol mute"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/volumecontrol up"), shell=True)}),
+                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/statusbar/battery.sh")).decode()),
+                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/statusbar/network.sh")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/network.sh ShowInfo"), shell=True), 'Button3': lambda: qtile.cmd_spawn(terminal+' -e nmtui', shell=True)}),
                 widget.Spacer(length = 10),
             ],
             30, margin=[10, 16, 0, 16] # N E S W
