@@ -286,7 +286,7 @@ screens = [
                     **widget_defaults
                 ),
                 widget.Systray(),
-                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/volume.sh")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol up"), shell=True), 'Button2': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol mute"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol down"), shell=True)}),
+                widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/volumecontrol")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol down"), shell=True), 'Button2': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol mute"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/volumecontrol up"), shell=True)}),
                 widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/battery.sh")).decode()),
                 widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/network.sh")).decode(), mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/network.sh ShowInfo"), shell=True), 'Button3': lambda: qtile.cmd_spawn(terminal+' -e nmtui', shell=True)}),
                 widget.Spacer(length = 10),
