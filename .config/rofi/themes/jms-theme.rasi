@@ -80,5 +80,5 @@ mode-switcher {
 
 textbox {
   background-color: #3fa9f4;
-  padding: 8px 140px;
+  padding: 8px;
 	}
