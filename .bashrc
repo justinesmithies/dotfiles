@@ -23,6 +23,8 @@ bind "set menu-complete-display-prefix on"
 # Colour autocomplete suggestions
 bind "set colored-stats on"
 
+# If bpytop is installed then alias top to bpytop 
+[ -e /usr/bin/bpytop ] && alias top="/usr/bin/bpytop"
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='vimargs'
