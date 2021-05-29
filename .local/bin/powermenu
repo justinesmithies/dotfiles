@@ -13,7 +13,7 @@ log_out="﫼 Log Out"
 # Variable passed to rofi
 options="$power_off\n$reboot\n$suspend\n$hibernate\n$log_out\n$lock"
 
-chosen="$(echo -e "$options" | $rofi_command -dmenu -mesg "Power Menu" -width 20 -lines 6)"
+chosen="$(echo -e "$options" | $rofi_command -dmenu -mesg "             Power Menu" -width 20 -lines 6)"
 case $chosen in
     $lock)
         betterlockscreen -l dimblur -t "Enter password to logon"
