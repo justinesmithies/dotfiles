@@ -3,7 +3,7 @@
 # Calendar script
 
 function ShowCalendar() {
-	dunstify -i "calendar"  "📅 This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"blue\">/;s/..27m/<\/span><\/b>/")" -r 124
+	dunstify -i "calendar"  "    📅 Calendar" "$(cal --color=always | sed "s/..7m/<b><span color=\"blue\">/;s/..27m/<\/span><\/b>/")" -r 124
 }
 
 function EditCalendar() {
