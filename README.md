@@ -8,6 +8,7 @@ Qtile is a very nice, hackable tiling window manager written and configured in P
 Below is a list of some of the packages that I use for my current setup.
 
 - **Operating System** --- [Archlinux](https://www.archlinux.org/)
+- **AUR Helper** --- [Paru](https://aur.archlinux.org/packages/paru-git/)
 - **Boot Loader** --- [Grub](https://wiki.archlinux.org/index.php/GRUB)
 - **Window Manager** --- [Qtile](https://aur.archlinux.org/packages/qtile-git)
 - **Screen Locker** --- [Betterlockscreen](https://aur.archlinux.org/packages/betterlockscreen)
