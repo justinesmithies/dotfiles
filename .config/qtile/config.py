@@ -275,7 +275,7 @@ screens = [
                        custom_command = 'checkupdates+aur',
                        display_format = ' {updates}',
                        colour_have_updates=GREEN,
-                       execute = 'kitty -e yay -Syu',
+                       execute = 'kitty -e paru -Syu',
                        ),
                 widget.Mpris2(
                     name='spotify',
