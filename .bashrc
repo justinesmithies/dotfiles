@@ -29,6 +29,7 @@ alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vim='vimargs'
 alias weechat='weechatargs'
+alias newsboat='newsboatargs'
 alias nvim="vim"
 alias ssh='kitty +kitten ssh'
 alias ranger='ranger-fix'
@@ -59,6 +60,11 @@ weechatargs() {
       #do things with parameters like $1 such as
      (kitty --class weechat -e weechat $@ & ) > /dev/null 2>&1
   }
+
+newsboatargs() {
+    #do things with parameters like $1 such as  
+  (kitty --class newsboat -e newsboat $@ & ) > /dev/null 2>&1 
+}
 
 # startx if on matching VT
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
