@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=newsboat-fix
+Name=Newsboat
+GenericName=RSS Feed Reader
+Comment=An RSS/Atom feed reader for text terminals 
+Icon=newsboat
+Keywords=RSS;news;
+Categories=ConsoleOnly
