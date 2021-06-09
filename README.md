@@ -34,7 +34,8 @@ Below is a list of some of the packages that I use for my current setup.
 - **Web Browser** --- [Firefox](https://wiki.archlinux.org/index.php/Firefox)
 - **PDF Viewer** --- [Zathura](https://wiki.archlinux.org/index.php/Zathura)
 - **IRC** --- [Weechat](https://weechat.org/)
-
+- **RSS Feed Reader** --- [Newsboat](https://aur.archlinux.org/packages/newsboat-git)
+-
 ## Keybindings
 ### Window manager controls
 | Keys                      | Action                    |
