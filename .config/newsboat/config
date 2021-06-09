@@ -1,0 +1,35 @@
+# general settings
+auto-reload yes
+max-items 500
+reload-threads 11
+
+color listnormal cyan default
+color listfocus blue yellow standout bold
+color listnormal_unread green default
+color listfocus_unread blue green standout bold
+color info yellow blue bold
+color article white default
+
+highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold
+highlight article "(^Link:.*|^Date:.*)" default default
+highlight article "https?://[^ ]+" green default
+
+highlight article "^(Title):.*$" blue default
+highlight article "\\[[0-9][0-9]*\\]" magenta default bold
+highlight article "\\[image\\ [0-9]+\\]" green default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
+highlight article ":.*\\(link\\)$" cyan default
+highlight article ":.*\\(image\\)$" blue default
+highlight article ":.*\\(embedded flash\\)$" magenta default
+
+highlight articlelist "(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-9]+" white default
+highlight articlelist "\\|[^\\|]+\\|" cyan default
+highlight articlelist "\\(YouTube\\)" magenta default
+highlight articlelist "\\(PeerTube\\)" magenta default
+highlight articlelist "\\|r/" red default
+highlight feedlist "\\(YouTube\\)" magenta default
+highlight feedlist "\\(PeerTube\\)" magenta default
+highlight feedlist " r/" red default
+highlight feedlist "\\([0-9]+/[0-9]+\\)" white default
+
+articlelist-format  "%4i %f %D   %?T?|%-20T|  ?%t"
