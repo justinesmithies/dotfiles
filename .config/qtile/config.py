@@ -217,6 +217,8 @@ workspaces = [
     {"name": " ₅", "key": "5", "matches": [Match(wm_class='gimp-2.10')]},
     {"name": "阮 ₆", "key": "6", "matches": [Match(wm_class='spotify')]},
     {"name": " ₇", "key": "7", "matches": [Match(wm_class='libreoffice')]},
+    {"name": " ₈", "key": "8", "matches": [Match(wm_class='newsboat')]},
+    {"name": " ₉", "key": "9", "matches": [Match(wm_class='neomutt')]},
 ]
 
 groups = []
