@@ -3,6 +3,8 @@ auto-reload yes
 max-items 500
 reload-threads 11
 
+browser "firefox --no-remote -P default --class newsboat %u"
+
 color listnormal cyan default
 color listfocus blue yellow standout bold
 color listnormal_unread green default
