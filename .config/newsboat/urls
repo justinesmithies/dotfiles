@@ -1,5 +1,6 @@
 ---Linux---
 https://www.archlinux.org/feeds/news/ "tech" "~ Arch Linux: Recent news"
+https://archlinux.org/feeds/packages/ "tech" "~ Arch Linux: Recent Updates"
 https://lwn.net/headlines/newrss "tech" "~🐧 LWN.net - News from the source"
 https://www.pine64.org/feed "blog" "tech" "~🐧📱 PINE64"
 https://xnux.eu/log/rss.xml "tech" "~🐧📱 Megi's Pinephone Development Log"
