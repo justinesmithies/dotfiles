@@ -1,6 +1,9 @@
+---Linux---
 https://www.archlinux.org/feeds/news/ "tech" "~ Arch Linux: Recent news"
+https://lwn.net/headlines/newrss "tech" "~🐧 LWN.net"
 https://www.pine64.org/feed "blog" "tech" "~🐧📱 PINE64"
 https://xnux.eu/log/rss.xml "tech" "~🐧📱 Megi's Pinephone Development Log"
+https://www.kernel.org/feeds/kdist.xml "tech" "~🐧 Latest Linux Kernel Versions"
 https://www.reddit.com/r/suckless/.rss "reddit" "~r/suckless "
 https://www.reddit.com/r/linux/.rss  "reddit" "~r/linux "
 https://www.reddit.com/r/qtile/.rss  "reddit" "~r/qtile "
@@ -10,3 +13,5 @@ https://www.reddit.com/r/homeassistant/.rss "reddit" "~r/homeassistant 🏠"
 https://www.reddit.com/r/commandline/.rss "reddit" "~r/commandline "
 https://www.reddit.com/r/Syncthing/.rss "reddit" "~r/Syncthing "
 https://www.reddit.com/r/unixporn/.rss "reddit" "~r/unixporn "
+---News---
+

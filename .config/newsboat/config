@@ -34,4 +34,7 @@ highlight feedlist "\\(PeerTube\\)" magenta default
 highlight feedlist " r/" red default
 highlight feedlist "\\([0-9]+/[0-9]+\\)" white default
 
+highlight all "---.*---" yellow default bold
+highlight feedlist "^.*\\(0/0\\)" black default invis
+
 articlelist-format  "%4i %f %D   %?T?|%-20T|  ?%t"
