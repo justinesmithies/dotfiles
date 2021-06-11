@@ -1,5 +1,6 @@
 # general settings
 auto-reload yes
+reload-time 30
 max-items 500
 reload-threads 11
 
