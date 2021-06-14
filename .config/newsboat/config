@@ -4,7 +4,8 @@ reload-time 30
 max-items 500
 reload-threads 11
 
-browser "firefox --no-remote -P default --class newsboat %u >/dev/null 2>&1 &"
+#browser "firefox --no-remote -P default --class newsboat %u >/dev/null 2>&1 &"
+browser linkhandler
 
 color listnormal cyan default
 color listfocus blue yellow standout bold
