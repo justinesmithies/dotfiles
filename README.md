@@ -38,12 +38,12 @@ Below is a list of some of the packages that I use for my current setup.
 
 ## Keybindings
 ### Window manager controls
-| Keys                      | Action                    |
-| ------------------------- | ------------------------- |
+| Keys                                 | Action                    |
+| ------------------------------------ | ------------------------- |
 | <kbd>CTRL + MOD + r</kbd>            | restart Qtile             |
 | <kbd>CTRL + MOD + q</kbd>            | shutdown Qtile            |
 | <kbd>MOD + w</kbd>                   | kill window               |
 | <kbd>MOD + r</kbd>                   | spawn program             |
 | <kbd>MOD + RETURN</kbd>              | spawn terminal            |
-| <kbd>CTRL + SPACE</kbd>              | Rofi menu                  |
-| <kbd>CTRL + MOD + p</kbd>            | Rofi power menu            |
+| <kbd>CTRL + SPACE</kbd>              | Rofi menu                 |
+| <kbd>CTRL + MOD + p</kbd>            | Rofi power menu           |
