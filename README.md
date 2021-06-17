@@ -35,6 +35,8 @@ Below is a list of some of the packages that I use for my current setup.
 - **PDF Viewer** --- [Zathura](https://wiki.archlinux.org/index.php/Zathura)
 - **IRC** --- [Weechat](https://weechat.org/)
 - **RSS Feed Reader** --- [Newsboat](https://aur.archlinux.org/packages/newsboat-git)
+- **Youtube search** --- [Ytfzf](https://aur.archlinux.org/packages/ytfzf/)
+- **Video player** --- [Mpv](https://aur.archlinux.org/packages/mpv-git)
 
 ## Keybindings
 ### Window manager controls
