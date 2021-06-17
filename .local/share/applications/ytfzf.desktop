@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=kitty --class ytfzf -e ytfzf
+Name=ytfzf
+GenericName=Youtube videos from the terminal
+Comment=A posix script to find and watch youtube videos from the terminal. (Without API) 
+Icon=video-display
+Keywords=Video;Youtube;
+Categories=Utility;Youtube;
