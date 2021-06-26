@@ -52,9 +52,7 @@ if [[ "$(cat /sys/class/power_supply/BAT0/status)" == "Charging" ]]; then
 	fi
 fi
 if [[ "$(cat /sys/class/power_supply/BAT0/status)" == "Unknown" ]]; then
-	if [[ "$(cat /sys/class/power_supply/BAT0/capacity)" == "100" ]]; then
 		icon=""
-	fi
 fi
 capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
 printf "%s" "$icon $capacity%"
