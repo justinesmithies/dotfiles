@@ -171,6 +171,9 @@ keys = [
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
+    # Toggle bars
+    Key([mod], "b", lazy.hide_show_bar(position='all')),
+
     # Qtile system keys
     Key([mod, "shift", "control"], "l", lazy.spawn("betterlockscreen -l")),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
