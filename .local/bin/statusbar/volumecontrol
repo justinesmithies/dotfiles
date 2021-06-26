@@ -60,7 +60,7 @@ case $1 in
     	# Toggle mute
 	amixer -D pulse set Master 1+ toggle > /dev/null
 	if is_mute ; then
-	dunstify -i "/usr/share/icons/Adwaita/16x16/legacy/audio-volume-muted.png" -r 5556 -u normal "$bar  $volume"
+	dunstify -i "/usr/share/icons/Adwaita/16x16/legacy/audio-volume-muted.png" -r 5556 -u normal "$bar Audio Muted"
 	else
 	    send_notification
 	    canberra-gtk-play -i audio-volume-change
