@@ -172,7 +172,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
     # Qtile system keys
-    Key([mod, "control"], "l", lazy.spawn("betterlockscreen -l")),
+    Key([mod, "shift", "control"], "l", lazy.spawn("betterlockscreen -l")),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
@@ -238,7 +238,7 @@ layouts = [
     layout.Stack(num_stacks=2, **layout_theme),
     #layout.Max(),
     # Try more layouts by unleashing below layouts.
-     layout.Bsp(**layout_theme),
+    layout.Bsp(**layout_theme),
     layout.Columns(**layout_theme),
     # layout.Matrix(),
     # layout.MonadWide(),
