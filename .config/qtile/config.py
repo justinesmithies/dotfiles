@@ -119,8 +119,8 @@ keys = [
     Key([mod], "j", lazy.layout.up(),
         desc="Move focus up in stack pane"),
 
-    #Key([mod], "h", lazy.layout.left()),
-	#Key([mod], "l", lazy.layout.right()),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_up()),
 	Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
 	Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 	Key([mod, "mod1"], "j", lazy.layout.flip_down()),
@@ -150,12 +150,6 @@ keys = [
     # Toggle floating
     Key([mod], "v", lazy.window.toggle_floating(),
         desc="Toggle floating"),
-
-    # Move windows up or down in current stack
-    Key([mod, "control"], "k", lazy.layout.shuffle_down(),
-        desc="Move window down in current stack "),
-    Key([mod, "control"], "j", lazy.layout.shuffle_up(),
-        desc="Move window up in current stack "),
 
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next(),
