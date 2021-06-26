@@ -239,7 +239,7 @@ layouts = [
     #layout.Max(),
     # Try more layouts by unleashing below layouts.
      layout.Bsp(**layout_theme),
-    # layout.Columns(),
+    layout.Columns(**layout_theme),
     # layout.Matrix(),
     # layout.MonadWide(),
     # layout.RatioTile(),
@@ -272,7 +272,7 @@ screens = [
                        **widget_defaults,
                        update_interval = 1800,
                        distro = 'Arch_yay',
-                       custom_command = 'checkupdates+aur',
+                       custom_command = 'checkupdates;paru -Qum',
                        display_format = ' {updates}',
                        colour_have_updates=GREEN,
                        execute = 'kitty -e paru',
