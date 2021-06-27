@@ -160,7 +160,8 @@ keys = [
      lazy.layout.grow_right()
      ),
 	Key([mod], "n",
-     lazy.layout.normalize()
+     lazy.layout.normalize(),
+     desc='normalize window size ratios'
      ),
     Key([mod], "m",
         lazy.layout.maximize(),
