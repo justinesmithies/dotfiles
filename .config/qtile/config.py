@@ -316,7 +316,7 @@ keys = [
         desc='Brightness up'
         ),
 
-    # Screenshot
+    # Screenshots
     # Save screen to clipboard
     Key([], "Print",
         lazy.spawn("/usr/bin/escrotum -C"),
