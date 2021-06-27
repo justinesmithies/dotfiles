@@ -148,7 +148,7 @@ keys = [
         ),
 
     # Toggle floating
-    Key([mod], "v", lazy.window.toggle_floating(),
+    Key([mod, "shift"], "f", lazy.window.toggle_floating(),
         desc="Toggle floating"),
 
     # Switch window focus to other pane(s) of stack
