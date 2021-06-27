@@ -318,7 +318,7 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules,
+    #*layout.Floating.default_float_rules,
     Match(title='Quit and close tabs?'),
     Match(wm_type='utility'),
     Match(wm_type='notification'),
