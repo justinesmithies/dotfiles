@@ -114,24 +114,54 @@ WHITE = MYCOLORS[7]
 keys = [
 
     # Switch between windows in current stack pane
-    Key([mod], "k", lazy.layout.down(),
-        desc="Move focus down in stack pane"),
-    Key([mod], "j", lazy.layout.up(),
-        desc="Move focus up in stack pane"),
+    Key([mod], "k",
+        lazy.layout.down(),
+        desc="Move focus down in stack pane"
+        ),
+    Key([mod], "j",
+        lazy.layout.up(),
+        desc="Move focus up in stack pane"
+        ),
 
-    Key([mod, "shift"], "k", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_up()),
-	Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
-	Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
-	Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-	Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-	Key([mod, "mod1"], "h", lazy.layout.flip_left()),
-	Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-	Key([mod, "control"], "j", lazy.layout.grow_down()),
-	Key([mod, "control"], "k", lazy.layout.grow_up()),
-	Key([mod, "control"], "h", lazy.layout.grow_left()),
-	Key([mod, "control"], "l", lazy.layout.grow_right()),
-	Key([mod], "n", lazy.layout.normalize()),
+    Key([mod, "shift"], "k",
+        lazy.layout.shuffle_down()
+        ),
+    Key([mod, "shift"], "j",
+        lazy.layout.shuffle_up()
+        ),
+	Key([mod, "shift"], "h",
+     lazy.layout.shuffle_left()
+     ),
+	Key([mod, "shift"], "l",
+     lazy.layout.shuffle_right()
+     ),
+	Key([mod, "mod1"], "j",
+     lazy.layout.flip_down()
+     ),
+	Key([mod, "mod1"], "k",
+     lazy.layout.flip_up()
+     ),
+	Key([mod, "mod1"], "h",
+     lazy.layout.flip_left()
+     ),
+	Key([mod, "mod1"], "l",
+     lazy.layout.flip_right()
+     ),
+	Key([mod, "control"], "j",
+     lazy.layout.grow_down()
+     ),
+	Key([mod, "control"], "k",
+     lazy.layout.grow_up()
+     ),
+	Key([mod, "control"], "h",
+     lazy.layout.grow_left()
+     ),
+	Key([mod, "control"], "l",
+     lazy.layout.grow_right()
+     ),
+	Key([mod], "n",
+     lazy.layout.normalize()
+     ),
     Key([mod], "m",
         lazy.layout.maximize(),
         desc='toggle window between minimum and maximum sizes'
@@ -162,56 +192,112 @@ keys = [
         desc="Switch window focus to other pane(s) of stack"),
 
     # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate(),
-        desc="Swap panes of split stack"),
+    Key([mod, "shift"], "space",
+        lazy.layout.rotate(),
+        desc="Swap panes of split stack"
+        ),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod, "shift"], "Return",
+        lazy.layout.toggle_split(),
+        desc="Toggle between split and unsplit sides of stack"
+        ),
+    Key([mod], "Return",
+        lazy.spawn(terminal),
+        desc="Launch terminal"
+        ),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "Tab",
+        lazy.next_layout(),
+        desc="Toggle between layouts"
+        ),
+    Key([mod], "w",
+        lazy.window.kill(),
+        desc="Kill focused window"
+        ),
 
     # Toggle bars
-    Key([mod], "b", lazy.hide_show_bar(position='all')),
+    Key([mod], "b",
+        lazy.hide_show_bar(position='all'),
+        desc="Toggle bars"
+        ),
 
     # Qtile system keys
-    Key([mod, "shift", "control"], "l", lazy.spawn("betterlockscreen -l")),
-    Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod, "control"], "p", lazy.spawn(""+home+"/.local/bin/powermenu")),
+    Key([mod, "shift", "control"], "l",
+        lazy.spawn("betterlockscreen -l"),
+        desc="Lock screen"
+        ),
+    Key([mod, "control"], "r",
+        lazy.restart(),
+        desc="Restart qtile"
+        ),
+    Key([mod, "control"], "q",
+        lazy.shutdown(),
+        desc="Shutdown qtile"
+        ),
+    Key([mod], "r",
+        lazy.spawncmd(),
+        desc="Spawn a command using a prompt widget"
+        ),
+    Key([mod, "control"], "p",
+        lazy.spawn(""+home+"/.local/bin/powermenu"),
+        desc="Launch Power menu"
+        ),
 
     # Rofi
-    Key(["control"], "space", lazy.spawn("rofi -show drun")),
+    Key(["control"], "space",
+        lazy.spawn("rofi -show drun"),
+        desc="Launch Rofi menu"
+        ),
 
     # ------------ Hardware Configs ------------
     # Volume
-    Key([], "XF86AudioMute", lazy.spawn(home + "/.local/bin/statusbar/volumecontrol mute")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn(home + "/.local/bin/statusbar/volumecontrol down")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn(home + "/.local/bin/statusbar/volumecontrol up")),
+    Key([], "XF86AudioMute",
+        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol mute")
+        ),
+    Key([], "XF86AudioLowerVolume",
+        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol down")
+        ),
+    Key([], "XF86AudioRaiseVolume",
+        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol up")
+        ),
 
     # Media keys
-    Key([], "XF86AudioPlay", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.PlayPause")),
-    Key([], "XF86AudioNext", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Next")),
-    Key([], "XF86AudioPrev", lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Previous")),
+    Key([], "XF86AudioPlay",
+        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.PlayPause")
+        ),
+    Key([], "XF86AudioNext",
+        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Next")
+        ),
+    Key([], "XF86AudioPrev",
+        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Previous")
+        ),
 
     # Brightness
-    Key([], "XF86MonBrightnessDown", lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol down")),
-    Key([], "XF86MonBrightnessUp", lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol up")),
+    Key([], "XF86MonBrightnessDown",
+        lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol down")
+        ),
+    Key([], "XF86MonBrightnessUp",
+        lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol up")
+        ),
 
     # Screenshot
     # Save screen to clipboard
-    Key([], "Print", lazy.spawn("/usr/bin/escrotum -C")),
+    Key([], "Print",
+        lazy.spawn("/usr/bin/escrotum -C")
+        ),
     # Save screen to screenshots folder
-	Key([mod], "Print", lazy.spawn("/usr/bin/escrotum " + home + "/Pictures/Screenshots/screenshot_%d_%m_%Y_%H_%M_%S.png")),
+	Key([mod], "Print",
+     lazy.spawn("/usr/bin/escrotum " + home + "/Pictures/Screenshots/screenshot_%d_%m_%Y_%H_%M_%S.png")
+     ),
 	# Capture region of screen to clipboard
-	Key([mod, "shift"], "s", lazy.spawn("/usr/bin/escrotum -Cs")),
+	Key([mod, "shift"], "s",
+     lazy.spawn("/usr/bin/escrotum -Cs")
+     ),
 ]
 
 # Groups with matches
