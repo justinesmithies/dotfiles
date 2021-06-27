@@ -113,6 +113,14 @@ WHITE = MYCOLORS[7]
 
 keys = [
 
+    Key([mod], "g",
+        lazy.screen.next_group(skip_empty=True),
+        desc="Move to next active group"
+        ),
+    Key([mod, "shift"], "g",
+        lazy.screen.prev_group(skip_empty=True),
+        desc="Move to previous active group"
+        ),
     # Switch between windows in current stack pane
     Key([mod], "k",
         lazy.layout.down(),
