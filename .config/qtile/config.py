@@ -124,40 +124,52 @@ keys = [
         ),
 
     Key([mod, "shift"], "k",
-        lazy.layout.shuffle_down()
+        lazy.layout.shuffle_down(),
+        desc='Shuffle down'
         ),
     Key([mod, "shift"], "j",
-        lazy.layout.shuffle_up()
+        lazy.layout.shuffle_up(),
+        desc='Shuffle up'
         ),
 	Key([mod, "shift"], "h",
-     lazy.layout.shuffle_left()
+     lazy.layout.shuffle_left(),
+     desc='Shuffle left'
      ),
 	Key([mod, "shift"], "l",
-     lazy.layout.shuffle_right()
+     lazy.layout.shuffle_right(),
+     desc='Shuffle right'
      ),
 	Key([mod, "mod1"], "j",
-     lazy.layout.flip_down()
+     lazy.layout.flip_down(),
+     desc='Flip down'
      ),
 	Key([mod, "mod1"], "k",
-     lazy.layout.flip_up()
+     lazy.layout.flip_up(),
+     desc='Flip up'
      ),
 	Key([mod, "mod1"], "h",
-     lazy.layout.flip_left()
+     lazy.layout.flip_left(),
+     desc='Flip left'
      ),
 	Key([mod, "mod1"], "l",
-     lazy.layout.flip_right()
+     lazy.layout.flip_right(),
+     desc='Flip right'
      ),
 	Key([mod, "control"], "j",
-     lazy.layout.grow_down()
+     lazy.layout.grow_down(),
+     desc='Grow down'
      ),
 	Key([mod, "control"], "k",
-     lazy.layout.grow_up()
+     lazy.layout.grow_up(),
+     desc='Grow up'
      ),
 	Key([mod, "control"], "h",
-     lazy.layout.grow_left()
+     lazy.layout.grow_left(),
+     desc='Grow left'
      ),
 	Key([mod, "control"], "l",
-     lazy.layout.grow_right()
+     lazy.layout.grow_right(),
+     desc='Grow right'
      ),
 	Key([mod], "n",
      lazy.layout.normalize(),
@@ -180,7 +192,8 @@ keys = [
 
     # Toggle floating
     Key([mod, "shift"], "f", lazy.window.toggle_floating(),
-        desc="Toggle floating"),
+        desc="Toggle floating"
+        ),
 
     # Toggle Fullscreen
     Key([mod], "f",
@@ -190,7 +203,8 @@ keys = [
 
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next(),
-        desc="Switch window focus to other pane(s) of stack"),
+        desc="Switch window focus to other pane(s) of stack"
+        ),
 
     # Swap panes of split stack
     Key([mod, "shift"], "space",
@@ -258,46 +272,57 @@ keys = [
     # ------------ Hardware Configs ------------
     # Volume
     Key([], "XF86AudioMute",
-        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol mute")
+        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol mute"),
+        desc='Mute audio'
         ),
     Key([], "XF86AudioLowerVolume",
-        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol down")
+        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol down"),
+        desc='Volume down'
         ),
     Key([], "XF86AudioRaiseVolume",
-        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol up")
+        lazy.spawn(home + "/.local/bin/statusbar/volumecontrol up"),
+        desc='Volume up'
         ),
 
     # Media keys
     Key([], "XF86AudioPlay",
-        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.PlayPause")
+        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.PlayPause"),
+        desc='Audio play'
         ),
     Key([], "XF86AudioNext",
-        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Next")
+        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Next"),
+        desc='Audio next'
         ),
     Key([], "XF86AudioPrev",
-        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Previous")
+        lazy.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify " "/org/mpris/MediaPlayer2 " "org.mpris.MediaPlayer2.Player.Previous"),
+        desc='Audio previous'
         ),
 
     # Brightness
     Key([], "XF86MonBrightnessDown",
-        lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol down")
+        lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol down"),
+        desc='Brightness down'
         ),
     Key([], "XF86MonBrightnessUp",
-        lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol up")
+        lazy.spawn(home + "/.local/bin/statusbar/brightnesscontrol up"),
+        desc='Brightness up'
         ),
 
     # Screenshot
     # Save screen to clipboard
     Key([], "Print",
-        lazy.spawn("/usr/bin/escrotum -C")
+        lazy.spawn("/usr/bin/escrotum -C"),
+        desc='Save screen to clipboard'
         ),
     # Save screen to screenshots folder
 	Key([mod], "Print",
-     lazy.spawn("/usr/bin/escrotum " + home + "/Pictures/Screenshots/screenshot_%d_%m_%Y_%H_%M_%S.png")
+     lazy.spawn("/usr/bin/escrotum " + home + "/Pictures/Screenshots/screenshot_%d_%m_%Y_%H_%M_%S.png"),
+     desc='Save screen to screenshots folder'
      ),
 	# Capture region of screen to clipboard
 	Key([mod, "shift"], "s",
-     lazy.spawn("/usr/bin/escrotum -Cs")
+     lazy.spawn("/usr/bin/escrotum -Cs"),
+     desc='Capture region of screen to clipboard'
      ),
 ]
 
