@@ -313,12 +313,12 @@ mouse = [
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
-main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
+    *layout.Floating.default_float_rules,
     Match(title='Quit and close tabs?'),
     Match(wm_type='utility'),
     Match(wm_type='notification'),
