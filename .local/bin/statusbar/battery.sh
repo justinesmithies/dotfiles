@@ -51,6 +51,11 @@ if [[ "$(cat /sys/class/power_supply/BAT0/status)" == "Charging" ]]; then
 		icon=""
 	fi
 fi
+
+if [[ "$(cat /sys/class/power_supply/BAT0/status)" == "Full" ]]; then
+		icon=""
+fi
+
 if [[ "$(cat /sys/class/power_supply/BAT0/status)" == "Unknown" ]]; then
 		icon=""
 fi
