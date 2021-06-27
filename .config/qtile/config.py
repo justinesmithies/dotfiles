@@ -151,6 +151,12 @@ keys = [
     Key([mod, "shift"], "f", lazy.window.toggle_floating(),
         desc="Toggle floating"),
 
+    # Toggle Fullscreen
+    Key([mod], "f",
+        lazy.window.toggle_fullscreen(),
+        desc='toggle fullscreen'
+        ),
+
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next(),
         desc="Switch window focus to other pane(s) of stack"),
