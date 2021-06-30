@@ -401,7 +401,7 @@ screens = [
                        **widget_defaults,
                        update_interval = 1800,
                        distro = 'Arch_paru',
-                       #custom_command = 'checkupdates;paru -Qum',
+                       custom_command = 'checkupdates;paru -Qum',
                        display_format = ' {updates}',
                        colour_have_updates=GREEN,
                        execute = 'kitty -e paru',
