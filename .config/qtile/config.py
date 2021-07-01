@@ -400,7 +400,7 @@ screens = [
                 widget.CheckUpdates(
                        **widget_defaults,
                        update_interval = 1800,
-                       distro = 'Arch_paru',
+                       distro = 'Arch_yay',
                        custom_command = 'checkupdates;paru -Qum',
                        display_format = ' {updates}',
                        colour_have_updates=GREEN,
