@@ -122,7 +122,7 @@ let g:Hexokinase_highlighters = [ 'virtual' ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Airline
 let g:airline#extensions#tabline#enabled = 1        " Enable the list of buffers
-let g:airline_theme='powerlineish'                  " Match airline theme with vim colorscheme 
+let g:airline_theme='powerlineish'                  " Match airline theme with vim colorscheme
 let g:airline_powerline_fonts = 1                   " Use powerline fonts for airline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" NERDTree
