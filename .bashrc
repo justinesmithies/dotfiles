@@ -28,7 +28,7 @@ bind "set colored-stats on"
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-# Only use aliases according to the $TERM we are in
+# Only use aliases according to the TERM we are in
 case $TERM in
   xterm*|konsole*)
     alias vim='vimargs';
