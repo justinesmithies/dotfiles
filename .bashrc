@@ -27,12 +27,21 @@ bind "set colored-stats on"
 [ -e /usr/bin/bpytop ] && alias top="/usr/bin/bpytop"
 alias ls='ls --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias vim='vimargs'
-alias weechat='weechatargs'
-alias newsboat='newsboatargs'
-alias nvim="vim"
-alias ssh='kitty +kitten ssh'
-alias ranger='ranger-fix'
+
+# Only use aliases according to the $TERM we are in
+case $TERM in
+  xterm*|konsole*)
+    alias vim='vimargs';
+    alias weechat='weechatargs';
+    alias newsboat='newsboatargs';
+    alias ssh='kitty +kitten ssh';
+    alias nvim="vim";
+    alias ranger='ranger-fix';;
+  linux)
+    alias vim="nvim";;
+  *)
+esac
+
 command -v bat > /dev/null && alias cat='bat --paging=never' 
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 
