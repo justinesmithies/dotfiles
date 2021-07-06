@@ -25,7 +25,7 @@ bind "set colored-stats on"
 
 # If bpytop is installed then alias top to bpytop 
 [ -e /usr/bin/bpytop ] && alias top="/usr/bin/bpytop"
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -hv --group-directories-first'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Only use aliases according to the TERM we are in
@@ -37,6 +37,7 @@ case $TERM in
     alias ssh='kitty +kitten ssh';
     alias nvim="vim";
     alias ranger='ranger-fix';;
+    #alias ls='lsd';;
   linux)
     alias vim="nvim";;
   *)
@@ -44,13 +45,6 @@ esac
 
 command -v bat > /dev/null && alias cat='bat --paging=never' 
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
-
-# If not in xterm then don't alias ls='lsd'
-case $TERM in
-  xterm*|konsole*)
-    command -v lsd > /dev/null && alias ls='lsd';;
-  *)
-esac
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 export EDITOR="nvim"
