@@ -37,7 +37,6 @@ case $TERM in
     alias ssh='kitty +kitten ssh';
     alias nvim="vim";
     alias ranger='ranger-fix';;
-    #alias ls='lsd';;
   linux)
     alias vim="nvim";;
   *)
