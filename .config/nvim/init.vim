@@ -44,6 +44,9 @@ Plug 'Yggdroot/indentLine'
 " vim-hexokinase Plugin
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
+" Syntastic Plugin
+Plug 'vim-syntastic/syntastic'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Settings
@@ -114,6 +117,21 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 5 " syntax info window is 5 rows height
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+noremap <C-w>e :SyntasticCheck<CR>
+noremap <C-w>f :SyntasticToggleMode<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Hexokinase
 
