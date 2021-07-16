@@ -55,17 +55,17 @@ export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
 vimargs() {
     #do things with parameters like $1 such as
-   (kitty --class vim -e nvim $@ & ) > /dev/null 2>&1
+   (kitty --class vim -e nvim "$@" & ) > /dev/null 2>&1
 }
 
 weechatargs() {
       #do things with parameters like $1 such as
-     (kitty --class weechat -e weechat $@ & ) > /dev/null 2>&1
+     (kitty --class weechat -e weechat "$@" & ) > /dev/null 2>&1
   }
 
 newsboatargs() {
     #do things with parameters like $1 such as  
-  (kitty --class newsboat -e newsboat $@ & ) > /dev/null 2>&1 
+  (kitty --class newsboat -e newsboat "$@" & ) > /dev/null 2>&1 
 }
 
 # startx if on matching VT
