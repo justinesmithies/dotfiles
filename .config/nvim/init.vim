@@ -133,6 +133,11 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 noremap <C-w>e :SyntasticCheck<CR>
 noremap <C-w>f :SyntasticToggleMode<CR>
 
+highlight SyntasticWarningLine guibg=#434343
+highlight SyntasticErrorLine guibg=#434343
+highlight SyntasticStyleErrorLine guibg=#434343
+highlight SyntasticStyleWarningLine guibg=#434343
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Hexokinase
 
 " Neovim default
