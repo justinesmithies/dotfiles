@@ -45,7 +45,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Syntastic Plugin
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
+
+" ALE Plugin
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -119,24 +122,36 @@ function! s:check_back_space() abort
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 5 " syntax info window is 5 rows height
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_loc_list_height = 5 " syntax info window is 5 rows height
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-noremap <C-w>e :SyntasticCheck<CR>
-noremap <C-w>f :SyntasticToggleMode<CR>
+"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+"noremap <C-w>e :SyntasticCheck<CR>
+"noremap <C-w>f :SyntasticToggleMode<CR>
 
-highlight SyntasticWarningLine guibg=#434343
-highlight SyntasticErrorLine guibg=#434343
-highlight SyntasticStyleErrorLine guibg=#434343
-highlight SyntasticStyleWarningLine guibg=#434343
+"highlight SyntasticWarningLine guibg=#434343
+"highlight SyntasticErrorLine guibg=#434343
+"highlight SyntasticStyleErrorLine guibg=#434343
+"highlight SyntasticStyleWarningLine guibg=#434343
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ALE
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
+highlight ALEWarning guibg=#434343
+highlight ALEError guibg=#434343
+highlight ALEWarningLine guibg=#434343
+highlight ALEErrorLine guibg=#434343
+highlight ALEInfo guibg=#434343
+highlight ALEInfoLine guibg=#434343
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Hexokinase
 
