@@ -49,7 +49,7 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 export EDITOR="nvim"
 export PATH=$PATH:~/.local/bin
 export STARSHIP_CONFIG=~/.config/starship/config.toml
-export BROWSER="firefox"
+export BROWSER="qutebrowser"
 export XDG_CONFIG_HOME="$HOME/.config"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
