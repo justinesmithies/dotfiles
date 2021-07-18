@@ -146,12 +146,12 @@ endfunction
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 
-highlight ALEWarning guibg=#434343
-highlight ALEError guibg=#434343
-highlight ALEWarningLine guibg=#434343
-highlight ALEErrorLine guibg=#434343
-highlight ALEInfo guibg=#434343
-highlight ALEInfoLine guibg=#434343
+highlight ALEError guibg=#434343 guisp=White
+highlight ALEInfo guibg=#434343 guisp=White
+highlight ALEWarning guibg=#434343 guisp=White
+highlight ALEErrorLine guibg=#434343 gui=bold
+highlight ALEInfoLine guibg=#434343 gui=bold
+highlight ALEWarningLine guibg=#434343 gui=bold
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Hexokinase
 
