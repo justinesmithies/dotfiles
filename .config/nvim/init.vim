@@ -44,9 +44,6 @@ Plug 'Yggdroot/indentLine'
 " vim-hexokinase Plugin
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
-" Syntastic Plugin
-"Plug 'vim-syntastic/syntastic'
-
 " ALE Plugin
 Plug 'dense-analysis/ale'
 
@@ -121,26 +118,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_loc_list_height = 5 " syntax info window is 5 rows height
-
-"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-"noremap <C-w>e :SyntasticCheck<CR>
-"noremap <C-w>f :SyntasticToggleMode<CR>
-
-"highlight SyntasticWarningLine guibg=#434343
-"highlight SyntasticErrorLine guibg=#434343
-"highlight SyntasticStyleErrorLine guibg=#434343
-"highlight SyntasticStyleWarningLine guibg=#434343
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" ALE
 
 " Set this. Airline will handle the rest.
@@ -152,6 +129,9 @@ highlight ALEWarning guibg=#434343 guisp=White
 highlight ALEErrorLine guibg=#434343 gui=bold
 highlight ALEInfoLine guibg=#434343 gui=bold
 highlight ALEWarningLine guibg=#434343 gui=bold
+
+" Use system flake8
+let g:ale_python_flake8_executable = '/usr/bin/flake8'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Hexokinase
 
