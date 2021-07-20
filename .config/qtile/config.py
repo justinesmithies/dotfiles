@@ -29,18 +29,20 @@ from libqtile import qtile
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+# from libqtile.utils import guess_terminal
 from libqtile import hook
-from libqtile.command import lazy
+# from libqtile.command import lazy
 from datetime import datetime as dt
 import os
 import subprocess
 from libqtile.utils import send_notification
 
 # When application launched automatically focus it's group
+
+
 @hook.subscribe.client_new
 def modify_window(client):
-    #if (client.window.get_wm_transient_for() or client.window.get_wm_type() in floating_types):
+    # if (client.window.get_wm_transient_for() or client.window.get_wm_type() in floating_types):
     #    client.floating = True
 
     for group in groups:  # follow on auto-move
@@ -51,6 +53,8 @@ def modify_window(client):
             break
 
 # Hook to fallback to the first group with windows when last window of group is killed
+
+
 @hook.subscribe.client_killed
 def fallback(window):
     if window.group.windows != {window}:
@@ -65,9 +69,11 @@ def fallback(window):
 # Work around for matching Spotify
 import time
 
+
 @hook.subscribe.client_new
 def slight_delay(window):
-	time.sleep(0.04)
+    time.sleep(0.04)
+
 
 @hook.subscribe.startup_once
 def autostart():
@@ -75,16 +81,19 @@ def autostart():
     subprocess.Popen([home + '/.config/qtile/autostart.sh'])
 
 # Add th, nd or st to the date - use custom_date in text box
+
+
 def suffix(d):
     return 'th' if 11<=d<=13 else {1:'st',2:'nd',3:'rd'}.get(d%10, 'th')
+
 
 def custom_strftime(format, t):
     return t.strftime(format).replace('{S}', str(t.day) + suffix(t.day))
 
-def custom_date():
-	return custom_strftime('%A {S} %B %Y - %H:%M', dt.now())
 
-from libqtile.utils import send_notification
+def custom_date():
+    return custom_strftime('%A {S} %B %Y - %H:%M', dt.now())
+
 
 mod = "mod4"
 
