@@ -31,7 +31,7 @@ Below is a list of some of the packages that I use for my current setup.
 	- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 	- [indentLine](https://github.com/Yggdroot/indentLine)
 	- [vim-hexokinase](https://github.com/rrethy/vim-hexokinase)
-- **Web Browser** --- [Firefox](https://wiki.archlinux.org/index.php/Firefox)
+- **Web Browser** --- [Qutebrowser](https://www.qutebrowser.org)
 - **PDF Viewer** --- [Zathura](https://wiki.archlinux.org/index.php/Zathura)
 - **IRC** --- [Weechat](https://weechat.org/)
 - **RSS Feed Reader** --- [Newsboat](https://aur.archlinux.org/packages/newsboat-git)
