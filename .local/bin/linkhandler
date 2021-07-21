@@ -19,5 +19,5 @@ case "$1" in
 	*mp3|*flac|*opus|*mp3?source*)
 		qndl "$1" 'curl -LO'  >/dev/null 2>&1 ;;
 	*)
-		[ -f "$1" ] && setsid -f "$TERMINAL" -e "$EDITOR" "$1" >/dev/null 2>&1 || setsid -f "$BROWSER" "$1" >/dev/null 2>&1
+		[ -f "$1" ] && setsid -f "$TERMINAL" -e "$EDITOR" "$1" >/dev/null 2>&1 || setsid -f "$BROWSER" --target window "$1" >/dev/null 2>&1
 esac
