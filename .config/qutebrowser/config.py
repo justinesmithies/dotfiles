@@ -10,9 +10,16 @@
 #   qute://help/configuring.html
 #   qute://help/settings.html
 
+# pylint: disable=C0111
+c = c  # noqa: F821 pylint: disable=E0602,C0103
+config = config  # noqa: F821 pylint: disable=E0602,C0103
+
 config.load_autoconfig(False)
 
 c.auto_save.session = True
+
+# Format of timestamps (e.g. for the history completion).
+c.completion.timestamp_format = '%d-%m-%Y %H:%M'
 
 # Confirm quit if downloading
 c.confirm_quit = ["downloads"]
@@ -76,3 +83,11 @@ c.fonts.default_size = '12pt'
 config.bind('xb', 'config-cycle statusbar.show never always')
 config.bind('xt', 'config-cycle tabs.show never always ')
 config.bind('xx', 'config-cycle statusbar.show never always;; config-cycle tabs.show never always ')
+# config.source("gruvbox.py")
+
+## Additional arguments to pass to Qt, without leading `--`. With
+## QtWebEngine, some Chromium arguments (see
+## https://peter.sh/experiments/chromium-command-line-switches/ for a
+## list) will work.
+## Type: List of String
+# c.qt.args += ['qt-arg stylesheet .config/qutebrowser/stylesheet.qss']
